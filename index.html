@@ -1,671 +1,438 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0046)https://daric-genesis.github.io/daric/#gallery -->
+<html lang="fa" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DARIC - The Royal Achaemenid NFT Collection</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'daric-gold': '#D4AF37',
-                        'daric-gold-light': '#F4DF8D',
-                        'daric-lapis': '#1E3A8A',
-                        'daric-dark': '#0F172A',
-                    },
-                    fontFamily: {
-                        sans: ['Vazirmatn', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./DARIC - The Royal Achaemenid NFT Collection_files/css2" rel="stylesheet">
     <style>
-        body { background-color: #0F172A; color: #F8FAFC; }
-        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F4DF8D 50%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
-        .lang-btn { transition: all 0.3s ease; }
-        .lang-btn.active { background-color: #D4AF37; color: #0F172A; font-weight: bold; }
-        .lang-btn:hover { background-color: rgba(212, 175, 55, 0.2); }
-        html[dir="ltr"] .space-x-reverse { --tw-space-x-reverse: 0; }
-        html[dir="ltr"] .ml-10 { margin-left: 0; margin-right: 2.5rem; }
-        html[dir="ltr"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
-        html[dir="ltr"] .ml-4 { margin-left: 0; margin-right: 1rem; }
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-dark: #AA771C;
+            --bg-dark: #0A0A0E;
+            --card-bg: rgba(20, 20, 28, 0.75);
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --text-main: #EAEAEA;
+            --text-dim: #A0A0B0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; background-image: radial-gradient(circle at 50% 0%, #1a1608 0%, #0a0a0e 70%); }
+        .en-font { font-family: 'Cinzel', serif; }
+        .cuneiform { font-family: sans-serif; letter-spacing: 2px; }
+        
+        /* Header */
+        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(10, 10, 14, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-gold); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 48px; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5)); }
+        .brand-name { font-size: 22px; font-weight: 900; background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        nav { display: flex; gap: 25px; align-items: center; }
+        nav a { color: var(--text-main); text-decoration: none; font-size: 15px; transition: 0.3s; }
+        nav a:hover { color: var(--gold-primary); text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+        
+        .lang-switcher { display: flex; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-gold); border-radius: 20px; padding: 3px; }
+        .lang-btn { background: none; border: none; color: var(--text-dim); padding: 5px 12px; border-radius: 15px; cursor: pointer; font-size: 13px; font-weight: 600; transition: 0.3s; }
+        .lang-btn.active { background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark)); color: #000; font-weight: bold; }
+
+        /* Hero Section */
+        .hero { min-height: 100vh; padding: 120px 5% 60px; display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+        .hero-content { flex: 1; max-width: 650px; }
+        .hero-badge { display: inline-block; padding: 6px 16px; border-radius: 30px; background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold-primary); color: var(--gold-primary); font-size: 14px; margin-bottom: 20px; }
+        .hero-title { font-size: 48px; font-weight: 900; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(135deg, #FFF, var(--gold-light), var(--gold-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { font-size: 18px; color: var(--text-dim); line-height: 1.8; margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+        
+        .btn-gold { background: linear-gradient(135deg, var(--gold-light), var(--gold-primary), var(--gold-dark)); color: #000; padding: 14px 32px; border-radius: 30px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+        .btn-outline { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 14px 32px; border-radius: 30px; font-weight: 600; text-decoration: none; cursor: pointer; transition: 0.3s; }
+        .btn-outline:hover { background: rgba(212, 175, 55, 0.1); }
+        
+        .hero-visual { flex: 1; display: flex; justify-content: center; position: relative; }
+        .hero-img-box { position: relative; border-radius: 20px; padding: 15px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.4), transparent); border: 1px solid var(--border-gold); }
+        .hero-img { width: 100%; max-width: 420px; border-radius: 15px; filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3)); }
+        
+        /* Stats / Contract Section */
+        .stats-section { padding: 60px 5%; background: rgba(15, 15, 22, 0.6); border-y: 1px solid var(--border-gold); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: center; }
+        .stat-card { background: var(--card-bg); border: 1px solid var(--border-gold); padding: 25px; border-radius: 16px; }
+        .stat-val { font-size: 28px; font-weight: 900; color: var(--gold-primary); margin-bottom: 5px; }
+        .stat-lbl { font-size: 14px; color: var(--text-dim); }
+        
+        /* Gallery Section */
+        .gallery-section { padding: 100px 5%; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-title { font-size: 36px; font-weight: 900; color: var(--gold-primary); margin-bottom: 15px; }
+        .section-subtitle { color: var(--text-dim); font-size: 16px; }
+        
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .nft-card { background: var(--card-bg); border: 1px solid var(--border-gold); border-radius: 20px; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; }
+        .nft-card:hover { transform: translateY(-8px); border-color: var(--gold-primary); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
+        .nft-img-wrapper { position: relative; width: 100%; padding-top: 100%; cursor: pointer; overflow: hidden; }
+        .nft-img { position: absolute; top:0; left:0; width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .nft-card:hover .nft-img { transform: scale(1.05); }
+        .token-tag { position: absolute; top: 15px; right: 15px; background: rgba(10, 10, 14, 0.8); border: 1px solid var(--gold-primary); color: var(--gold-primary); font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; backdrop-filter: blur(5px); }
+        .nft-info { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .nft-title { font-size: 18px; font-weight: 700; color: #FFF; margin-bottom: 8px; }
+        .nft-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-bottom: 20px; }
+        .nft-buy-btn { text-align: center; background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold-primary); color: var(--gold-primary); text-decoration: none; padding: 10px; border-radius: 12px; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .nft-buy-btn:hover { background: var(--gold-primary); color: #000; }
+
+        /* Chronicles Section */
+        .chronicles-section { padding: 100px 5%; background: rgba(15, 15, 22, 0.4); }
+        .chronicles-list { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .chronicle-card { background: var(--card-bg); border: 1px solid var(--border-gold); padding: 25px; border-radius: 16px; }
+        .chronicle-num { font-size: 14px; color: var(--gold-primary); font-weight: 700; margin-bottom: 5px; }
+        .chronicle-title { font-size: 20px; font-weight: 700; color: #FFF; margin-bottom: 10px; }
+        .chronicle-text { font-size: 14px; color: var(--text-dim); line-height: 1.8; }
+
+        /* Contract & Copy Box */
+        .contract-box { max-width: 700px; margin: 50px auto 0; background: var(--card-bg); border: 1px solid var(--gold-primary); padding: 25px; border-radius: 20px; text-align: center; }
+        .contract-addr { background: rgba(0,0,0,0.5); border: 1px border var(--border-gold); padding: 12px 20px; border-radius: 10px; font-family: monospace; font-size: 14px; color: var(--gold-light); word-break: break-all; margin: 15px 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .copy-btn { background: var(--gold-primary); border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 12px; }
+
+        /* Lightbox Modal */
+        .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { max-width: 90%; max-height: 90%; border-radius: 15px; border: 2px solid var(--gold-primary); box-shadow: 0 0 40px rgba(212, 175, 55, 0.4); }
+        .close-modal { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #FFF; cursor: pointer; }
+
+        /* Footer */
+        footer { border-top: 1px solid var(--border-gold); padding: 40px 5%; text-align: center; color: var(--text-dim); font-size: 14px; }
+        footer a { color: var(--gold-primary); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 100px; }
+            .hero-title { font-size: 32px; }
+            nav { display: none; }
+        }
     </style>
 </head>
-<body class="font-sans antialiased">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-daric-dark/95 backdrop-blur-md border-b border-daric-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/logo daric.webp" alt="DARIC Logo" class="h-12">
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8 space-x-reverse">
-                        <a href="#gallery" class="hover:text-daric-gold transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_gallery">گالری آثار</a>
-                        <a href="#about" class="hover:text-daric-gold transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_about">چرا داریک؟</a>
-                        <a href="#rewards" class="hover:text-daric-gold transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_rewards">پاداش‌ها</a>
-                        <a href="#tokenomics" class="hover:text-daric-gold transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_tokenomics">توکنومیکس</a>
-                        <a href="#chronicles" class="hover:text-daric-gold transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_chronicles">روایت‌ها</a>
-                        <a href="#contract" class="hover:text-daric-gold transition-colors px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav_contract">قرارداد</a>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <!-- Language Switcher -->
-                    <div class="flex gap-1 bg-daric-dark border border-daric-gold/30 rounded-full p-1">
-                        <button onclick="switchLang('fa')" class="lang-btn active px-3 py-1 rounded-full text-xs" id="btn-fa">فارسی</button>
-                        <button onclick="switchLang('en')" class="lang-btn px-3 py-1 rounded-full text-xs" id="btn-en">EN</button>
-                        <button onclick="switchLang('peo')" class="lang-btn px-3 py-1 rounded-full text-xs" id="btn-peo">𐎠𐎼𐎹</button>
-                    </div>
-                    <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank" class="bg-daric-gold text-daric-dark font-bold px-6 py-2 rounded-full hover:bg-daric-gold-light transition-all text-sm" data-i18n="nav_buy">
-                        خرید از Element Market
-                    </a>
-                </div>
+    <!-- Header -->
+    <header>
+        <a href="https://daric-genesis.github.io/daric/#" class="logo-container">
+            <img src="./DARIC - The Royal Achaemenid NFT Collection_files/logo daric.webp" alt="DARIC Logo" class="logo-img">
+            <span class="brand-name">DARIC NFT</span>
+        </a>
+        <nav>
+            <a href="https://daric-genesis.github.io/daric/#gallery" data-i18n="nav_gallery">گالری آثار</a>
+            <a href="https://daric-genesis.github.io/daric/#about" data-i18n="nav_about">چرا داریک؟</a>
+            <a href="https://daric-genesis.github.io/daric/#chronicles" data-i18n="nav_chronicles">روایت‌ها</a>
+            <a href="https://daric-genesis.github.io/daric/#contract" data-i18n="nav_contract">قرارداد</a>
+        </nav>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLanguage('fa')">FA</button>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn cuneiform" onclick="setLanguage('cu')">𐎠𐎼𐎹𐎠</button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge" data-i18n="hero_badge">مجموعه سلطنتی هخامنشی روی شبکه پلی‌گان</div>
+            <h1 class="hero-title" data-i18n="hero_title">گنجینه جاودان داریک هخامنشی</h1>
+            <p class="hero-desc" data-i18n="hero_desc">نخستین و اصیل‌ترین مجموعه NFT چندرسانه‌ای شاهنشاهی ایران. ترکیبی فاخر از هنر باستانی، طلای خالص ۲۴ عیار و بلاک‌چین مدرن.</p>
+            <div class="hero-btns">
+                <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank" class="btn-gold" data-i18n="btn_element">خرید مستقیم از Element Market</a>
+                <a href="https://daric-genesis.github.io/daric/#gallery" class="btn-outline" data-i18n="btn_explore">مشاهده گنجینه</a>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="about" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                <span class="gold-gradient" data-i18n="hero_title">گنجینه جاودان داریک هخامنشی</span>
-            </h1>
-            <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-300 leading-relaxed" data-i18n="hero_desc">
-                نخستین و اصیل‌ترین مجموعه NFT چندرسانه‌ای شاهنشاهی ایران. ترکیبی فاخر از هنر باستانی، طلای خالص ۲۴ عیار و بلاک‌چین مدرن.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank" class="bg-daric-gold text-daric-dark font-bold px-8 py-3 rounded-full hover:bg-daric-gold-light transition-all" data-i18n="hero_btn_buy">خرید مستقیم از Element Market</a>
-                <a href="#gallery" class="border border-daric-gold text-daric-gold px-8 py-3 rounded-full hover:bg-daric-gold hover:text-daric-dark transition-all" data-i18n="hero_btn_gallery">مشاهده گنجینه</a>
+        <div class="hero-visual">
+            <div class="hero-img-box">
+                <img src="./DARIC - The Royal Achaemenid NFT Collection_files/DARIC.webp" alt="DARIC King Coin" class="hero-img" onclick="openModal(this.src)">
             </div>
+            <div class="section-header">
+                <h3 class="section-title" data-i18n="cond_title">شرایط و قوانین داریک</h3>
+                <p class="section-subtitle" data-i18n="cond_intro">قوانین پاداش، قفل توکن‌ها و امتیازهای دارندگان</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_1">تمام دارایی‌های داریک قفل شده (Vesting Lock) هستند و به‌صورت تدریجی آزاد می‌شوند.</div></div>
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_2">با هر خرید از کلکسیون ما، به ازای هر $10,000 ارزش خرید، ۱ داریک پاداش دریافت می‌کنید.</div></div>
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_3">قفل توکن‌ها تا زمان تعیین‌شده در برنامه آزادسازی (Vesting Schedule) است؛ آزادسازی تدریجی انجام می‌شود.</div></div>
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_4">داریک‌ها فقط به صورت جایزه (Reward) یا طبق قوانین خاص اهدا می‌شوند و به فروش عمومی گذاشته نمی‌شوند.</div></div>
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_5">دارندگان توکن داریک، حق رأی و امتیاز تصمیم‌گیری در پروژه دارند (حاکمیت وزنی).</div></div>
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_6">هر دارنده ۵ داریک، سکه فیزیکی طلای ۲۴ عیار به عنوان پاداش دریافت می‌کند.</div></div>
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_7">کل عرضه فقط ۲,۵۵۰ داریک است: ۲,۰۰۰ داریک قفل شده و ۵۵۰ داریک به صورت پاداش به خریداران آثار اهدا می‌شود.</div></div>
+                <div class="stat-card"><div class="stat-lbl" data-i18n="cond_8">اولین خریدار (هر مقدار که باشد) سکه فیزیکی با روکش آبکاری طلا هدیه می‌گیرد؛ ۵ خریدار نخست با خرید بالای $10,000 علاوه بر ۲۰٪ تخفیف در خرید بعدی، توکن داریک کامل هم دریافت می‌کنند.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section" id="about">
+        <div class="stats-grid">
             
-            <!-- Stats -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <div class="p-4 gold-border rounded-lg bg-daric-dark/50">
-                    <div class="text-2xl font-bold text-daric-gold">ERC-721</div>
-                    <div class="text-sm text-gray-400" data-i18n="stat_1_label">استاندارد هوشمند بلاک‌چین</div>
-                </div>
-                <div class="p-4 gold-border rounded-lg bg-daric-dark/50">
-                    <div class="text-2xl font-bold text-daric-gold">Polygon</div>
-                    <div class="text-sm text-gray-400" data-i18n="stat_2_label">شبکه لایه دو اتریوم (تایید شده)</div>
-                </div>
-                <div class="p-4 gold-border rounded-lg bg-daric-dark/50">
-                    <div class="text-2xl font-bold text-daric-gold">$30,000+</div>
-                    <div class="text-sm text-gray-400" data-i18n="stat_3_label">ارزش پایه گنجینه</div>
-                </div>
-                <div class="p-4 gold-border rounded-lg bg-daric-dark/50">
-                    <div class="text-2xl font-bold text-daric-gold">7.5%</div>
-                    <div class="text-sm text-gray-400" data-i18n="stat_4_label">حق رویالیتی ثبت شده</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Phygital Rewards Section -->
-    <section id="rewards" class="py-20 bg-slate-900 border-y border-daric-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black gold-gradient mb-4" data-i18n="rewards_title">پاداش‌های فیزیکی و دیجیتال (Phygital)</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto" data-i18n="rewards_desc">ما به وفاداری شما ارزش واقعی و ملموس می‌دهیم. با خرید آثار داریک، صاحب یک گنجینه فیزیکی خواهید شد.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Tier 1 -->
-                <div class="gold-border rounded-2xl p-8 bg-daric-dark/80 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-daric-gold text-daric-dark text-xs font-bold px-3 py-1 rounded-bl-lg" data-i18n="tier1_badge">سطح ۱: همراهان نخستین</div>
-                    <div class="text-5xl mb-4">🪙</div>
-                    <h3 class="text-2xl font-bold text-white mb-4" data-i18n="tier1_title">سکه کلکسیونی اختصاصی</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm md:text-base">
-                        <li class="flex items-start"><span class="text-daric-gold ml-2 mt-1">✓</span> <span data-i18n="tier1_item1">اهدا به <strong>اولین خریداران</strong> آثار اولیه پروژه.</span></li>
-                        <li class="flex items-start"><span class="text-daric-gold ml-2 mt-1">✓</span> <span data-i18n="tier1_item2">سکه باکیفیت با <strong>روکش طلا</strong>.</span></li>
-                        <li class="flex items-start"><span class="text-daric-gold ml-2 mt-1">✓</span> <span data-i18n="tier1_item3"><strong>حک نام خریدار</strong> در پشت سکه به عنوان یادگاری ابدی.</span></li>
-                    </ul>
-                </div>
-
-                <!-- Tier 2 -->
-                <div class="gold-border rounded-2xl p-8 bg-gradient-to-br from-daric-lapis/30 to-daric-dark border-daric-gold relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-daric-gold text-daric-dark text-xs font-bold px-3 py-1 rounded-bl-lg" data-i18n="tier2_badge">سطح ۲: خزانه‌داران داریک</div>
-                    <div class="text-5xl mb-4">👑</div>
-                    <h3 class="text-2xl font-bold text-daric-gold mb-4" data-i18n="tier2_title">سکه طلای خالص ۲۴ عیار</h3>
-                    <ul class="space-y-3 text-gray-200 text-sm md:text-base">
-                        <li class="flex items-start"><span class="text-daric-gold ml-2 mt-1">✓</span> <span data-i18n="tier2_item1">ویژه دارندگان <strong>۵ توکن داریک و بیشتر</strong> (از طریق خرید در Rarible و Element Market).</span></li>
-                        <li class="flex items-start"><span class="text-daric-gold ml-2 mt-1">✓</span> <span data-i18n="tier2_item2"><strong>سکه واقعی طلا با عیار ۲۴</strong> با ارزش فیزیکی و ذاتی کامل.</span></li>
-                        <li class="flex items-start"><span class="text-daric-gold ml-2 mt-1">✓</span> <span data-i18n="tier2_item3">حک عبارت افتخارآمیز <strong>«خزانه‌دار داریک»</strong> در پشت سکه.</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tokenomics & Vesting Section -->
-    <section id="tokenomics" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black gold-gradient mb-4" data-i18n="tokenomics_title">توکنومیکس و پاداش وفاداری</h2>
-                <p class="text-gray-300 max-w-3xl mx-auto" data-i18n="tokenomics_desc">ارزش‌گذاری بر اساس ثروت واقعی هخامنشیان. هر داریک نمایانگر ۱.۸۳ تن طلای باستانی است. ارزش پایه هر داریک ۱,۰۰۰ دلار تعیین شده است.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="text-center p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <div class="text-4xl font-black text-daric-gold mb-2" data-i18n="token1_value">۱ به ازای ۱۰K$</div>
-                    <div class="text-gray-300 font-bold" data-i18n="token1_label">مکانیزم پاداش خرید</div>
-                    <p class="text-sm text-gray-400 mt-2" data-i18n="token1_desc">به ازای هر ۱۰,۰۰۰ دلار خرید آثار، ۱ داریک پاداش (مثلاً خرید ۲۰۰ دلاری = ۰.۰۲ داریک) با دقت اعشاری محاسبه می‌شود.</p>
-                </div>
-                <div class="text-center p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <div class="text-4xl font-black text-daric-gold mb-2">Vesting Lock</div>
-                    <div class="text-gray-300 font-bold" data-i18n="token2_label">قفل هوشمند زمانی</div>
-                    <p class="text-sm text-gray-400 mt-2" data-i18n="token2_desc">توکن‌های پاداش به صورت دوره‌ای و زمان‌بندی‌شده (مثلاً ۶ تا ۱۲ ماهه) آزاد می‌شوند تا از فروش ناگهانی جلوگیری و ارزش پایدار بماند.</p>
-                </div>
-                <div class="text-center p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <div class="text-4xl font-black text-daric-gold mb-2">Whale Reward</div>
-                    <div class="text-gray-300 font-bold" data-i18n="token3_label">پاداش ویژه نهنگ‌ها</div>
-                    <p class="text-sm text-gray-400 mt-2" data-i18n="token3_desc">خریداران عمده NFT، ۱ داریک اضافی به عنوان پاداش وفاداری دریافت می‌کنند که تا زمان شکوفایی کامل پروژه غیرقابل فروش و قفل است.</p>
-                </div>
-            </div>
-
-            <!-- Royal Pass & Governance (اصلاح شده) -->
-            <div class="p-8 rounded-2xl bg-gradient-to-r from-daric-lapis/20 to-transparent border border-daric-gold/30">
-                <h3 class="text-2xl font-bold text-daric-gold mb-6 text-center md:text-right" data-i18n="royal_title">👑 مزایای انحصاری دارندگان داریک (Royal Pass)</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="flex items-start">
-                        <div class="text-daric-gold text-2xl ml-4">🏛️</div>
-                        <div>
-                            <h4 class="font-bold text-white mb-2 text-lg" data-i18n="royal_discount_title">تخفیف ۳۰٪ ویژه ۵ خریدار نخستین</h4>
-                            <p class="text-gray-300 text-sm leading-relaxed" data-i18n="royal_discount_desc">این تخفیف انحصاری فقط برای <strong>۵ خرید اول</strong> و تنها برای <strong>خریدهای بالای ۱۰,۰۰۰ دلار</strong> اعمال می‌شود. دارندگان این امتیاز، حق خرید توکن‌های داریک از فازهای آینده را با قیمت ۷۰۰ دلار (به جای ۱,۰۰۰ دلار) خواهند داشت.</p>
-                            <div class="mt-3 inline-block bg-daric-gold/10 border border-daric-gold/30 rounded-lg px-3 py-1 text-xs text-daric-gold font-bold" data-i18n="royal_discount_badge">⚠️ محدود: فقط ۵ صندلی باقی‌مانده</div>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="text-daric-gold text-2xl ml-4">⚖️</div>
-                        <div>
-                            <h4 class="font-bold text-white mb-2 text-lg" data-i18n="royal_gov_title">حاکمیت وزنی (Weighted Governance)</h4>
-                            <p class="text-gray-300 text-sm leading-relaxed" data-i18n="royal_gov_desc">هر ۱ داریک = ۱ رأی از مجموع ۲,۵۵۰ رأی. شما در تصمیم‌گیری‌های آینده پروژه به میزان دارایی خود حق رأی دارید.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section (دست‌نخورده) -->
-    <section id="gallery" class="py-20 bg-slate-900 border-y border-daric-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black gold-gradient mb-4" data-i18n="gallery_title">گنجینه ۹گانه سلطنتی</h2>
-                <p class="text-gray-300" data-i18n="gallery_desc">آثار باستانی بازآفرینی شده با پالت طلایی و لاجوردی هخامنشی با گواهینامه اصالت بلاک‌چین</p>
-            </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Token #0 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/w8jx3ceFfsM7uxV1qnBcCvYcanE-mZWRPx2sQSK6FMe8nY9bjA.webp" alt="Token #0" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #0</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token0_desc">خزانه‌ی بی‌پایان داریوش: نماد عظمت ثروت امپراتوری، صندوقچه‌های طلا و سکه‌های جاودانه در تالارهای تخت جمشید.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn">خرید مستقیم (Token #0) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #1 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/02.webp" alt="Token #1" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #1</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token1_desc">ارابه زرین شاهنشاهی: ارابه سلطنتی چهار اسبه طلایی، نماد سرعت، اقتدار و تسلط بر جاده شاهی.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/1" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn1">خرید مستقیم (Token #1) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #2 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/03.webp" alt="Token #2" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #2</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token2_desc">قدح لاجوردی و آبشار داریک: قدح باستانی لاجورد کاخ شوش که طلای ذوب‌شده داریک بر آن می‌بارد.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/2" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn2">خرید مستقیم (Token #2) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #3 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/04.webp" alt="Token #3" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #3</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token3_desc">تخت سلطنتی لاجورد و شیر زرین: تخت شاهنشاهی تراشیده از لاجورد با محافظان شیر طلایی هخامنشی.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/3" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn3">خرید مستقیم (Token #3) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #4 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1001.webp" alt="Token #4" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #4</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token4_desc">سکه کهن کماندار زرین داریک: نخستین سکه استاندارد جهان، نقش شاهنشاه کماندار در حالت دو زانو.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/4" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn4">خرید مستقیم (Token #4) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #5 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1002.webp" alt="Token #5" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #5</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token5_desc">استوانه لاجورد و الواح زرین: الواح طلایی آپادانا و منشور سنگ لاجورد با حکاکی خط میخی پارسی باستان.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/5" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn5">خرید مستقیم (Token #5) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #6 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1003.webp" alt="Token #6" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #6</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token6_desc">ریتون زرین هما و بال‌های زرین: جام پذیرایی تشریفاتی شاهان هخامنشی با نماد شیر بال‌دار و پرنده سعادت.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/6" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn6">خرید مستقیم (Token #6) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #7 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1004.webp" alt="Token #7" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #7</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token7_desc">کلاه‌خود زرین سپاه جاویدان: نماد قدرت بی‌شکست ۱۰ هزار سرباز جاویدان، آراسته به طلا و فیروزه.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/7" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn7">خرید مستقیم (Token #7) ↗</a>
-                    </div>
-                </div>
-                <!-- Token #8 -->
-                <div class="gold-border rounded-xl overflow-hidden bg-daric-dark">
-                    <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1005.webp" alt="Token #8" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-daric-gold mb-2">Token #8</h3>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="token8_desc">کلید دروازه ملل و نماد قدرت: کلید زرین دروازه همه ملل تخت جمشید، مظهر صلح، شکوه و فرمانروایی جهان.</p>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/8" target="_blank" class="block text-center bg-daric-gold/10 text-daric-gold border border-daric-gold py-2 rounded-lg hover:bg-daric-gold hover:text-daric-dark transition-all text-sm font-bold" data-i18n="buy_btn8">خرید مستقیم (Token #8) ↗</a>
-                    </div>
-                </div>
+            
+            <div class="stat-card">
+                <div class="stat-val" data-i18n="tok_12v">تخفیف ۲۰٪ خریداران نخست</div>
+                <div class="stat-lbl" data-i18n="tok_12">۵ خریدار نخستی که خریدی بالای $10,000 انجام دهند، ۲۰٪ تخفیف در خرید بعدی خود دریافت می‌کنند.</div>
             </div>
         </div>
+    </section>
+    <!-- Chronicles -->
+    <section class="chronicles-section" id="chronicles">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="chronicles_title">روایت‌های ۱۰‌گانه داریوش بزرگ</h2>
+            <p class="section-subtitle" data-i18n="chronicles_subtitle">سرگذشت واقعی ضرب اولین سکه جهانی و شکوه امپراتوری ایران</p>
+        </div>
+        <div class="chronicles-list" id="chroniclesList">
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت اول</div>
+                    <h3 class="chronicle-title">رویای سکه جهانی</h3>
+                    <p class="chronicle-text">داریوش بزرگ در سال ۵۱۵ پیش از میلاد دستور ضرب داریک را صادر کرد تا نخستین پول استاندارد و خالص جهان متولد شود.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت دوم</div>
+                    <h3 class="chronicle-title">عیار خالص ۲۴ عیار</h3>
+                    <p class="chronicle-text">داریک دارای خلوص ۹۵.۸٪ طلا بود که تا سده‌ها دقیق‌ترین استاندارد متالورژی جهان باستان به شمار می‌رفت.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت سوم</div>
+                    <h3 class="chronicle-title">نماد کماندار سلطنتی</h3>
+                    <p class="chronicle-text">تصویر شاه هخامنشی با کمان و نیزه، اقتدار دفاعی و صلابت امپراتوری را به کل تجارت جهانی تزریق کرد.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت چهارم</div>
+                    <h3 class="chronicle-title">جاده شاهی و داریک</h3>
+                    <p class="chronicle-text">در سراسر جاده ۲۷۰۰ کیلومتری شاهی از سارد تا شوش، داریک تنها ارز مورد اعتماد کاروان‌ها بود.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت پنجم</div>
+                    <h3 class="chronicle-title">انقلاب اقتصادی هخامنشی</h3>
+                    <p class="chronicle-text">با ورود داریک، تجارت پایاپای جای خود را به اقتصاد پولی مدرن داد و شکوفایی بی‌نظیری ایجاد نمود.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت ششم</div>
+                    <h3 class="chronicle-title">خزانه تخت جمشید</h3>
+                    <p class="chronicle-text">میلیون‌ها سکه داریک در خزانه‌های آپادانا نگهداری می‌شد تا پشتیبان مالی بزرگ‌ترین امپراتوری تاریخ باشد.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت هفتم</div>
+                    <h3 class="chronicle-title">دیپلماسی کمانداران زرین</h3>
+                    <p class="chronicle-text">یونانیان سکه‌های داریک را «کمانداران زرین» می‌نامیدند، چرا که قدرت آن از صدها هزار سرباز بیشتر بود.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت هشتم</div>
+                    <h3 class="chronicle-title">الواح زرین آپادانا</h3>
+                    <p class="chronicle-text">لوح‌های زرین داریوش که زیر پادseries کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت نهم</div>
+                    <h3 class="chronicle-title">مجموعه دیجیتال روی بلاک‌چین</h3>
+                    <p class="chronicle-text">امروز پس از ۲۵۰۰ سال، گنجینه داریک به عنوان یک NFT چندرسانه‌ای فاخر روی بلاک‌چین پلی‌گان احیا شده است.</p>
+                </div>
+            
+                <div class="chronicle-card">
+                    <div class="chronicle-num">روایت دهم</div>
+                    <h3 class="chronicle-title">میراث جاودان برای کلکسیونرها</h3>
+                    <p class="chronicle-text">مالکیت هر داریک دیجیتال، اتصال مستقیم به شکوه شاهنشاهی پارس و اصالت ثبت شده وب۳ است.</p>
+                </div>
+            </div>
     </section>
 
-    <!-- Contract Section -->
-    <section id="contract" class="py-20">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-black gold-gradient mb-6" data-i18n="contract_title">آدرس قرارداد هوشمند داریک (Polygon)</h2>
-            <p class="text-gray-300 mb-6" data-i18n="contract_desc">قرارداد هوشمند تایید شده در Polygonscan و مدیریت شده توسط سیستم Thirdweb</p>
-            <div class="bg-daric-dark border border-daric-gold/30 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                <code class="text-daric-gold font-mono text-lg break-all text-center md:text-right">0x929327af760a0bb3d98309634993a66f9f7cdae0</code>
-                <button onclick="navigator.clipboard.writeText('0x929327af760a0bb3d98309634993a66f9f7cdae0'); alert('آدرس کپی شد!');" class="bg-daric-lapis text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-all whitespace-nowrap font-bold" data-i18n="contract_copy">کپی آدرس</button>
-            </div>
-            <div class="mt-6 flex flex-col sm:flex-row justify-center gap-6 text-sm">
-                <a href="https://polygonscan.com/address/0x929327af760a0bb3d98309634993a66f9f7cdae0" target="_blank" class="text-daric-gold hover:underline flex items-center justify-center gap-2" data-i18n="contract_scan">مشاهده در Polygonscan ↗</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Chronicles Section -->
-    <section id="chronicles" class="py-20 bg-slate-900 border-y border-daric-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black gold-gradient mb-4" data-i18n="chronicles_title">روایت‌های ۱۰‌گانه داریوش بزرگ</h2>
-                <p class="text-gray-300" data-i18n="chronicles_desc">سرگذشت واقعی ضرب اولین سکه جهانی و شکوه امپراتوری ایران</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr1_title">روایت اول: رویای سکه جهانی</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr1_desc">داریوش بزرگ در سال ۵۱۵ پیش از میلاد دستور ضرب داریک را صادر کرد تا نخستین پول استاندارد و خالص جهان متولد شود.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr2_title">روایت دوم: عیار خالص ۲۴ عیار</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr2_desc">داریک دارای خلوص ۹۵.۸٪ طلا بود که تا سده‌ها دقیق‌ترین استاندارد متالورژی جهان باستان به شمار می‌رفت.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr3_title">روایت سوم: نماد کماندار سلطنتی</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr3_desc">تصویر شاه هخامنشی با کمان و نیزه، اقتدار دفاعی و صلابت امپراتوری را به کل تجارت جهانی تزریق کرد.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr4_title">روایت چهارم: جاده شاهی و داریک</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr4_desc">در سراسر جاده ۲۷۰۰ کیلومتری شاهی از سارد تا شوش، داریک تنها ارز مورد اعتماد کاروان‌ها بود.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr5_title">روایت پنجم: انقلاب اقتصادی هخامنشی</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr5_desc">با ورود داریک، تجارت پایاپای جای خود را به اقتصاد پولی مدرن داد و شکوفایی بی‌نظیری ایجاد نمود.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr6_title">روایت ششم: خزانه تخت جمشید</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr6_desc">میلیون‌ها سکه داریک در خزانه‌های آپادانا نگهداری می‌شد تا پشتیبان مالی بزرگ‌ترین امپراتوری تاریخ باشد.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr7_title">روایت هفتم: دیپلماسی کمانداران زرین</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr7_desc">یونانیان سکه‌های داریک را «کمانداران زرین» می‌نامیدند، چرا که قدرت آن از صدها هزار سرباز بیشتر بود.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr8_title">روایت هشتم: الواح زرین آپادانا</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr8_desc">لوح‌های زرین داریوش که زیر پایه‌های کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.</p>
-                </div>
-                <div class="p-6 gold-border rounded-xl bg-daric-dark/50">
-                    <h3 class="text-xl font-bold text-daric-gold mb-2" data-i18n="chr9_title">روایت نهم: مجموعه دیجیتال روی بلاک‌چین</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="chr9_desc">امروز پس از ۲۵۰۰ سال، گنجینه داریک به عنوان یک NFT چندرسانه‌ای فاخر روی بلاک‌چین پلی‌گان احیا شده است.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Modal Lightbox -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close-modal">×</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-daric-dark border-t border-daric-gold/20 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-500 text-sm mb-6">© 2025 DARIC Imperial NFT Collection. All rights reserved.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 text-sm text-gray-400">
-                <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank" class="hover:text-daric-gold transition-colors">Element Market</a>
-                <span class="hidden sm:inline">|</span>
-                <a href="https://polygonscan.com/address/0x929327af760a0bb3d98309634993a66f9f7cdae0" target="_blank" class="hover:text-daric-gold transition-colors">Polygonscan Verification</a>
+    <!-- Markets -->
+    <section class="gallery-section" id="markets">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="markets_title">بازارهای رسمی خرید داریک</h2>
+            <p class="section-subtitle" data-i18n="markets_subtitle">مجموعه سلطنتی داریک در بازارهای معتبر NFT قابل خرید و بررسی است</p>
+        </div>
+        <div class="stats-grid" style="max-width:700px; margin:0 auto;">
+            <div class="stat-card" style="padding:35px;">
+                <div class="stat-val" style="font-size:24px;">Rarible</div>
+                <div class="stat-lbl" style="margin-bottom:20px;" data-i18n="mk_rarible">خرید و معامله داریک در بازار Rarible</div>
+                <a href="https://rarible.com/collection/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0" target="_blank" class="nft-buy-btn">ورود به Rarible ↗</a>
+            </div>
+            <div class="stat-card" style="padding:35px;">
+                <div class="stat-val" style="font-size:24px;">Element</div>
+                <div class="stat-lbl" style="margin-bottom:20px;" data-i18n="mk_element">خرید مستقیم توکن‌های داریک در بازار Element</div>
+                <a href="https://element.market/collection/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0" target="_blank" class="nft-buy-btn">ورود به Element ↗</a>
             </div>
         </div>
+    </section>
+
+    <footer>
+        <p>© 2025 DARIC Imperial NFT Collection. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank">Element Market</a> | 
+            <a href="https://polygonscan.com/address/0x929327af760a0bb3d98309634993a66f9f7cdae0" target="_blank">Polygonscan Verification</a>
+        </p>
     </footer>
 
-    <!-- Language Switcher Script -->
     <script>
+        const galleryData = [
+            { id: 0, file: "w8jx3ceFfsM7uxV1qnBcCvYcanE-mZWRPx2sQSK6FMe8nY9bjA.webp", title_fa: "خزانه‌ی بی‌پایان داریوش", title_en: "The Grand Imperial Vault", title_cu: "𐎧𐏁𐎰𐎼 𐎭𐎠𐎼𐎹𐎺𐎢𐏁", desc_fa: "نماد عظمت ثروت امپراتوری، صندوقچه‌های طلا و سکه‌های جاودانه در تالارهای تخت جمشید.", desc_en: "Symbol of royal treasury, endless gold chests and eternal coins of Persepolis.", desc_cu: "𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎧𐏁𐎰𐎼 𐎴𐎡𐎱𐎡𐏁𐎰𐎠.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" },
+            { id: 1, file: "02.webp", title_fa: "ارابه زرین شاهنشاهی", title_en: "The Royal Golden Chariot", title_cu: "𐎼𐎰 𐎭𐎠𐎼𐎹𐎺𐎢𐏁", desc_fa: "ارابه سلطنتی چهار اسبه طلایی، نماد سرعت، اقتدار و تسلط بر جاده شاهی.", desc_en: "Four-horse golden imperial chariot, symbol of speed, power and the Royal Road.", desc_cu: "𐎼𐎰 𐎺𐎇𐎼𐎣 𐎠𐎼𐎹𐎠.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/1" },
+            { id: 2, file: "03.webp", title_fa: "قدح لاجوردی و آبشار داریک", title_en: "Vessel of Susa & Pouring Gold", title_cu: "𐎣𐎠𐎿 𐎾𐎠𐎇𐎺𐎼𐎭", desc_fa: "قدح باستانی لاجورد کاخ شوش که طلای ذوب‌شده داریک بر آن می‌بارد.", desc_en: "Ancient Lapis vessel of Susa palace pouring molten golden Daric coins.", desc_cu: "𐎣𐎠𐎿 𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎭𐎠𐎼𐎡𐎣.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/2" },
+            { id: 3, file: "04.webp", title_fa: "تخت سلطنتی لاجورد و شیر زرین", title_en: "The Imperial Lapis Throne", title_cu: "𐎥𐎠𐎰𐎢 𐎭𐎠𐎼𐎹𐎺𐎢𐏁", desc_fa: "تخت شاهنشاهی تراشیده از لاجورد با محافظان شیر طلایی هخامنشی.", desc_en: "Royal throne carved from deep blue Lapis lazuli with golden guardian lions.", desc_cu: "𐎥𐎠𐎰𐎢 𐎺𐎇𐎼𐎣 𐎠𐎼𐎹𐎠.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/3" },
+            { id: 4, file: "1001.webp", title_fa: "سکه کهن کماندار زرین داریک", title_en: "The Royal Archer Daric Coin", title_cu: "𐎭𐎠𐎼𐎡𐎣 𐎠𐎼𐎁𐎡𐎣", desc_fa: "نخستین سکه استاندارد جهان، نقش شاهنشاه کماندار در حالت دو زانو.", desc_en: "The world's first global gold currency depicting the kneeling Royal Archer king.", desc_cu: "𐎭𐎠𐎼𐎡𐎣 𐎧𐏁𐎠𐎹𐎰𐎡𐎹.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/4" },
+            { id: 5, file: "1002.webp", title_fa: "استوانه لاجورد و الواح زرین", title_en: "The Royal Cylinder & Gold Tablet", title_cu: "𐎿𐎡𐎠𐎣 𐎭𐎠𐎼𐎹𐎺𐎢𐏁", desc_fa: "الواح طلایی آپادانا و منشور سنگ لاجورد با حکاکی خط میخی پارسی باستان.", desc_en: "Apadana golden tablets and Lapis cylinder with Old Persian Cuneiform inscriptions.", desc_cu: "𐎿𐎡𐎠𐎣 𐎠𐎼𐎹𐎠 𐎴𐎡𐎱𐎡𐏁𐎰𐎠.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/5" },
+            { id: 6, file: "1003.webp", title_fa: "ریتون زرین هما و بال‌های زرین", title_en: "The Winged Griffin Rhyton", title_cu: "𐎣𐎠𐎿 𐎺𐎇𐎼𐎣 𐎷𐎠𐎴", desc_fa: "جام پذیرایی تشریفاتی شاهان هخامنشی با نماد شیر بال‌دار و پرنده سعادت.", desc_en: "Ceremonial golden rhyton vessel featuring the legendary winged griffin of Persia.", desc_cu: "𐎣𐎠𐎿 𐎠𐎼𐎹𐎠 𐎭𐎠𐎼𐎹𐎺𐎢𐏁.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/6" },
+            { id: 7, file: "1004.webp", title_fa: "کلاه‌خود زرین سپاه جاویدان", title_en: "The Immortal Guard Helm", title_cu: "𐎧𐎢𐎭 𐎠𐎴𐎢𐏁𐎡𐎹", desc_fa: "نماد قدرت بی‌شکست ۱۰ هزار سرباز جاویدان، آراسته به طلا و فیروزه.", desc_en: "Symbol of the invincible 10,000 Immortals, adorned with pure gold and turquoise.", desc_cu: "𐎧𐎢𐎭 𐎺𐎇𐎼𐎣 𐎠𐎴𐎢𐏁𐎡𐎹.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/7" },
+            { id: 8, file: "1005.webp", title_fa: "کلید دروازه ملل و نماد قدرت", title_en: "The Key of All Nations", title_cu: "𐎣𐎾𐎡𐎭 𐎺𐎡𐎿𐎱 𐎈𐎧𐎠𐎹", desc_fa: "کلید زرین دروازه همه ملل تخت جمشید، مظهر صلح، شکوه و فرمانروایی جهان.", desc_en: "The golden key to the Gate of All Nations in Persepolis, symbol of global unity.", desc_cu: "𐎣𐎾𐎡𐎭 𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎺𐎇𐎼𐎣.", link: "https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/8" }
+        ];
+
+        const chroniclesData = [
+            { num: "روایت اول", title_fa: "رویای سکه جهانی", title_en: "The Vision of Global Currency", text_fa: "داریوش بزرگ در سال ۵۱۵ پیش از میلاد دستور ضرب داریک را صادر کرد تا نخستین پول استاندارد و خالص جهان متولد شود.", text_en: "Darius the Great minted the Daric in 515 BCE, introducing the world's first unified pure gold standard." },
+            { num: "روایت دوم", title_fa: "عیار خالص ۲۴ عیار", title_en: "The 95.8% Pure Gold Standard", text_fa: "داریک دارای خلوص ۹۵.۸٪ طلا بود که تا سده‌ها دقیق‌ترین استاندارد متالورژی جهان باستان به شمار می‌رفت.", text_en: "With 95.8% purity, the Daric set the gold standard of metallurgy across ancient civilizations for centuries." },
+            { num: "روایت سوم", title_fa: "نماد کماندار سلطنتی", title_en: "The Royal Archer Symbol", text_fa: "تصویر شاه هخامنشی با کمان و نیزه، اقتدار دفاعی و صلابت امپراتوری را به کل تجارت جهانی تزریق کرد.", text_en: "Depicting the king with bow and spear, it symbolized defense, sovereignty, and trust in global commerce." },
+            { num: "روایت چهارم", title_fa: "جاده شاهی و داریک", title_en: "The Royal Road & Wealth", text_fa: "در سراسر جاده ۲۷۰۰ کیلومتری شاهی از سارد تا شوش، داریک تنها ارز مورد اعتماد کاروان‌ها بود.", text_en: "Along the 2,700km Royal Road from Sardis to Susa, Daric was the undisputed currency of global trade." },
+            { num: "روایت پنجم", title_fa: "انقلاب اقتصادی هخامنشی", title_en: "Achaemenid Financial Revolution", text_fa: "با ورود داریک، تجارت پایاپای جای خود را به اقتصاد پولی مدرن داد و شکوفایی بی‌نظیری ایجاد نمود.", text_en: "By replacing barter with standardized coinage, Darius catalyzed an unprecedented era of economic prosperity." },
+            { num: "روایت ششم", title_fa: "خزانه تخت جمشید", title_en: "The Treasury of Persepolis", text_fa: "میلیون‌ها سکه داریک در خزانه‌های آپادانا نگهداری می‌شد تا پشتیبان مالی بزرگ‌ترین امپراتوری تاریخ باشد.", text_en: "Millions of Daric coins backed the imperial treasury of Persepolis, powering world architecture and art." },
+            { num: "روایت هفتم", title_fa: "دیپلماسی کمانداران زرین", title_en: "Golden Archer Diplomacy", text_fa: "یونانیان سکه‌های داریک را «کمانداران زرین» می‌نامیدند، چرا که قدرت آن از صدها هزار سرباز بیشتر بود.", text_en: "Greeks called Darics 'Golden Archers', acknowledging that its economic influence surpassed massive armies." },
+            { num: "روایت هشتم", title_fa: "الواح زرین آپادانا", title_en: "The Golden Tablets of Apadana", text_fa: "لوح‌های زرین داریوش که زیر پادseries کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.", text_en: "Gold foundation tablets of Apadana sealed the eternal legacy of Darius and his golden standard." },
+            { num: "روایت نهم", title_fa: "مجموعه دیجیتال روی بلاک‌چین", title_en: "Digital Renaissance on Blockchain", text_fa: "امروز پس از ۲۵۰۰ سال، گنجینه داریک به عنوان یک NFT چندرسانه‌ای فاخر روی بلاک‌چین پلی‌گان احیا شده است.", text_en: "2,500 years later, the imperial Daric legacy is resurrected on Polygon blockchain as a luxury NFT collection." },
+            { num: "روایت دهم", title_fa: "میراث جاودان برای کلکسیونرها", title_en: "Eternal Legacy for Collectors", text_fa: "مالکیت هر داریک دیجیتال، اتصال مستقیم به شکوه شاهنشاهی پارس و اصالت ثبت شده وب۳ است.", text_en: "Owning a digital Daric connects collectors directly to Persian royal majesty and verified Web3 provenance." }
+        ];
+
+        let currentLang = 'fa';
+
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = galleryData.map(item => `
+                <div class="nft-card">
+                    <div class="nft-img-wrapper" onclick="openModal('${item.file}')">
+                        <img src="${item.file}" alt="${item['title_' + currentLang] || item.title_fa}" class="nft-img">
+                        <span class="token-tag">Token #${item.id}</span>
+                    </div>
+                    <div class="nft-info">
+                        <div>
+                            <h3 class="nft-title ${currentLang === 'en' ? 'en-font' : ''}">${item['title_' + currentLang] || item.title_fa}</h3>
+                            <p class="nft-desc">${item['desc_' + currentLang] || item.desc_fa}</p>
+                        </div>
+                        <a href="${item.link}" target="_blank" class="nft-buy-btn">
+                            ${currentLang === 'fa' ? 'خرید مستقیم (Token #' + item.id + ')' : (currentLang === 'en' ? 'Buy Token #' + item.id : '𐎧𐎢𐎭 Token #' + item.id)} ↗
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderChronicles() {
+            const list = document.getElementById('chroniclesList');
+            list.innerHTML = chroniclesData.map((c, i) => `
+                <div class="chronicle-card">
+                    <div class="chronicle-num">${currentLang === 'fa' ? c.num : 'Chronicle #' + (i+1)}</div>
+                    <h3 class="chronicle-title">${c['title_' + currentLang] || c.title_fa}</h3>
+                    <p class="chronicle-text">${c['text_' + currentLang] || c.text_fa}</p>
+                </div>
+            `).join('');
+        }
+
         const translations = {
             fa: {
-                nav_gallery: "گالری آثار",
-                nav_about: "چرا داریک؟",
-                nav_rewards: "پاداش‌ها",
-                nav_tokenomics: "توکنومیکس",
-                nav_chronicles: "روایت‌ها",
-                nav_contract: "قرارداد",
-                nav_buy: "خرید از Element Market",
-                hero_title: "گنجینه جاودان داریک هخامنشی",
+                nav_gallery: "گالری آثار", nav_about: "چرا داریک؟", nav_chronicles: "روایت‌ها", nav_contract: "قرارداد",
+                hero_badge: "مجموعه سلطنتی هخامنشی روی شبکه پلی‌گان", hero_title: "گنجینه جاودان داریک هخامنشی",
                 hero_desc: "نخستین و اصیل‌ترین مجموعه NFT چندرسانه‌ای شاهنشاهی ایران. ترکیبی فاخر از هنر باستانی، طلای خالص ۲۴ عیار و بلاک‌چین مدرن.",
-                hero_btn_buy: "خرید مستقیم از Element Market",
-                hero_btn_gallery: "مشاهده گنجینه",
-                stat_1_label: "استاندارد هوشمند بلاک‌چین",
-                stat_2_label: "شبکه لایه دو اتریوم (تایید شده)",
-                stat_3_label: "ارزش پایه گنجینه",
-                stat_4_label: "حق رویالیتی ثبت شده",
-                rewards_title: "پاداش‌های فیزیکی و دیجیتال (Phygital)",
-                rewards_desc: "ما به وفاداری شما ارزش واقعی و ملموس می‌دهیم. با خرید آثار داریک، صاحب یک گنجینه فیزیکی خواهید شد.",
-                tier1_badge: "سطح ۱: همراهان نخستین",
-                tier1_title: "سکه کلکسیونی اختصاصی",
-                tier1_item1: "اهدا به <strong>اولین خریداران</strong> آثار اولیه پروژه.",
-                tier1_item2: "سکه باکیفیت با <strong>روکش طلا</strong>.",
-                tier1_item3: "<strong>حک نام خریدار</strong> در پشت سکه به عنوان یادگاری ابدی.",
-                tier2_badge: "سطح ۲: خزانه‌داران داریک",
-                tier2_title: "سکه طلای خالص ۲۴ عیار",
-                tier2_item1: "ویژه دارندگان <strong>۵ توکن داریک و بیشتر</strong> (از طریق خرید در Rarible و Element Market).",
-                tier2_item2: "<strong>سکه واقعی طلا با عیار ۲۴</strong> با ارزش فیزیکی و ذاتی کامل.",
-                tier2_item3: "حک عبارت افتخارآمیز <strong>«خزانه‌دار داریک»</strong> در پشت سکه.",
-                tokenomics_title: "توکنومیکس و پاداش وفاداری",
-                tokenomics_desc: "ارزش‌گذاری بر اساس ثروت واقعی هخامنشیان. هر داریک نمایانگر ۱.۸۳ تن طلای باستانی است. ارزش پایه هر داریک ۱,۰۰۰ دلار تعیین شده است.",
-                token1_value: "۱ به ازای ۱۰K$",
-                token1_label: "مکانیزم پاداش خرید",
-                token1_desc: "به ازای هر ۱۰,۰۰۰ دلار خرید آثار، ۱ داریک پاداش (مثلاً خرید ۲۰۰ دلاری = ۰.۰۲ داریک) با دقت اعشاری محاسبه می‌شود.",
-                token2_label: "قفل هوشمند زمانی",
-                token2_desc: "توکن‌های پاداش به صورت دوره‌ای و زمان‌بندی‌شده (مثلاً ۶ تا ۱۲ ماهه) آزاد می‌شوند تا از فروش ناگهانی جلوگیری و ارزش پایدار بماند.",
-                token3_label: "پاداش ویژه نهنگ‌ها",
-                token3_desc: "خریداران عمده NFT، ۱ داریک اضافی به عنوان پاداش وفاداری دریافت می‌کنند که تا زمان شکوفایی کامل پروژه غیرقابل فروش و قفل است.",
-                royal_title: "👑 مزایای انحصاری دارندگان داریک (Royal Pass)",
-                royal_discount_title: "تخفیف ۳۰٪ ویژه ۵ خریدار نخستین",
-                royal_discount_desc: "این تخفیف انحصاری فقط برای <strong>۵ خرید اول</strong> و تنها برای <strong>خریدهای بالای ۱۰,۰۰۰ دلار</strong> اعمال می‌شود. دارندگان این امتیاز، حق خرید توکن‌های داریک از فازهای آینده را با قیمت ۷۰۰ دلار (به جای ۱,۰۰۰ دلار) خواهند داشت.",
-                royal_discount_badge: "⚠️ محدود: فقط ۵ صندلی باقی‌مانده",
-                royal_gov_title: "حاکمیت وزنی (Weighted Governance)",
-                royal_gov_desc: "هر ۱ داریک = ۱ رأی از مجموع ۲,۵۵۰ رأی. شما در تصمیم‌گیری‌های آینده پروژه به میزان دارایی خود حق رأی دارید.",
-                gallery_title: "گنجینه ۹گانه سلطنتی",
-                gallery_desc: "آثار باستانی بازآفرینی شده با پالت طلایی و لاجوردی هخامنشی با گواهینامه اصالت بلاک‌چین",
-                token0_desc: "خزانه‌ی بی‌پایان داریوش: نماد عظمت ثروت امپراتوری، صندوقچه‌های طلا و سکه‌های جاودانه در تالارهای تخت جمشید.",
-                token1_desc: "ارابه زرین شاهنشاهی: ارابه سلطنتی چهار اسبه طلایی، نماد سرعت، اقتدار و تسلط بر جاده شاهی.",
-                token2_desc: "قدح لاجوردی و آبشار داریک: قدح باستانی لاجورد کاخ شوش که طلای ذوب‌شده داریک بر آن می‌بارد.",
-                token3_desc: "تخت سلطنتی لاجورد و شیر زرین: تخت شاهنشاهی تراشیده از لاجورد با محافظان شیر طلایی هخامنشی.",
-                token4_desc: "سکه کهن کماندار زرین داریک: نخستین سکه استاندارد جهان، نقش شاهنشاه کماندار در حالت دو زانو.",
-                token5_desc: "استوانه لاجورد و الواح زرین: الواح طلایی آپادانا و منشور سنگ لاجورد با حکاکی خط میخی پارسی باستان.",
-                token6_desc: "ریتون زرین هما و بال‌های زرین: جام پذیرایی تشریفاتی شاهان هخامنشی با نماد شیر بال‌دار و پرنده سعادت.",
-                token7_desc: "کلاه‌خود زرین سپاه جاویدان: نماد قدرت بی‌شکست ۱۰ هزار سرباز جاویدان، آراسته به طلا و فیروزه.",
-                token8_desc: "کلید دروازه ملل و نماد قدرت: کلید زرین دروازه همه ملل تخت جمشید، مظهر صلح، شکوه و فرمانروایی جهان.",
-                buy_btn: "خرید مستقیم (Token #0) ↗",
-                buy_btn1: "خرید مستقیم (Token #1) ↗",
-                buy_btn2: "خرید مستقیم (Token #2) ↗",
-                buy_btn3: "خرید مستقیم (Token #3) ↗",
-                buy_btn4: "خرید مستقیم (Token #4) ↗",
-                buy_btn5: "خرید مستقیم (Token #5) ↗",
-                buy_btn6: "خرید مستقیم (Token #6) ↗",
-                buy_btn7: "خرید مستقیم (Token #7) ↗",
-                buy_btn8: "خرید مستقیم (Token #8) ↗",
-                contract_title: "آدرس قرارداد هوشمند داریک (Polygon)",
-                contract_desc: "قرارداد هوشمند تایید شده در Polygonscan و مدیریت شده توسط سیستم Thirdweb",
-                contract_copy: "کپی آدرس",
-                contract_scan: "مشاهده در Polygonscan ↗",
-                chronicles_title: "روایت‌های ۱۰‌گانه داریوش بزرگ",
-                chronicles_desc: "سرگذشت واقعی ضرب اولین سکه جهانی و شکوه امپراتوری ایران",
-                chr1_title: "روایت اول: رویای سکه جهانی",
-                chr1_desc: "داریوش بزرگ در سال ۵۱۵ پیش از میلاد دستور ضرب داریک را صادر کرد تا نخستین پول استاندارد و خالص جهان متولد شود.",
-                chr2_title: "روایت دوم: عیار خالص ۲۴ عیار",
-                chr2_desc: "داریک دارای خلوص ۹۵.۸٪ طلا بود که تا سده‌ها دقیق‌ترین استاندارد متالورژی جهان باستان به شمار می‌رفت.",
-                chr3_title: "روایت سوم: نماد کماندار سلطنتی",
-                chr3_desc: "تصویر شاه هخامنشی با کمان و نیزه، اقتدار دفاعی و صلابت امپراتوری را به کل تجارت جهانی تزریق کرد.",
-                chr4_title: "روایت چهارم: جاده شاهی و داریک",
-                chr4_desc: "در سراسر جاده ۲۷۰۰ کیلومتری شاهی از سارد تا شوش، داریک تنها ارز مورد اعتماد کاروان‌ها بود.",
-                chr5_title: "روایت پنجم: انقلاب اقتصادی هخامنشی",
-                chr5_desc: "با ورود داریک، تجارت پایاپای جای خود را به اقتصاد پولی مدرن داد و شکوفایی بی‌نظیری ایجاد نمود.",
-                chr6_title: "روایت ششم: خزانه تخت جمشید",
-                chr6_desc: "میلیون‌ها سکه داریک در خزانه‌های آپادانا نگهداری می‌شد تا پشتیبان مالی بزرگ‌ترین امپراتوری تاریخ باشد.",
-                chr7_title: "روایت هفتم: دیپلماسی کمانداران زرین",
-                chr7_desc: "یونانیان سکه‌های داریک را «کمانداران زرین» می‌نامیدند، چرا که قدرت آن از صدها هزار سرباز بیشتر بود.",
-                chr8_title: "روایت هشتم: الواح زرین آپادانا",
-                chr8_desc: "لوح‌های زرین داریوش که زیر پایه‌های کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.",
-                chr9_title: "روایت نهم: مجموعه دیجیتال روی بلاک‌چین",
-                chr9_desc: "امروز پس از ۲۵۰۰ سال، گنجینه داریک به عنوان یک NFT چندرسانه‌ای فاخر روی بلاک‌چین پلی‌گان احیا شده است."
+                btn_element: "خرید مستقیم از Element Market", btn_explore: "مشاهده گنجینه",
+                stat_1: "استاندارد هوشمند بلاک‌چین", stat_2: "شبکه لایه دو اتریوم (تایید شده)", stat_3: "ارزش پایه گنجینه", stat_4: "حق رویالیتی ثبت شده",
+                gallery_title: "گنجینه ۹گانه سلطنتی", gallery_subtitle: "آثار باستانی بازآفرینی شده با پالت طلایی و لاجوردی هخامنشی با گواهینامه اصالت بلاک‌چین",
+                contract_title: "آدرس قرارداد هوشمند داریک (Polygon)", contract_desc: "قرارداد هوشمند تایید شده در Polygonscan و مدیریت شده توسط سیستم Thirdweb",
+                copy_btn: "کپی آدرس", verify_scan: "مشاهده در Polygonscan ↗",
+                chronicles_title: "روایت‌های ۱۰‌گانه داریوش بزرگ", chronicles_subtitle: "سرگذشت واقعی ضرب اولین سکه جهانی و شکوه امپراتوری ایران",
+                token_title: "توکنومیکس داریک", token_sub: "اقتصاد سلطنتی داریک: ارزش‌گذاری، حاکمیت و پاداش‌های ویژه",
+                tok_1: "فرمول قیمت‌گذاری: هر $10,000 ارزش = 1 DARIC",
+                tok_3: "آستانه گنجینه: بیش از $30,000", tok_4: "رویالیتی: 7.5%",
+                tok_5: "حاکمیت وزنی — قدرت رأی هر نگهدارنده متناسب با تعداد داریک‌های اوست | عرضه کل: 2,550 DARIC",
+                tok_6v: "قفل زمانی (Vesting Lock)", tok_6: "دارایی‌ها به‌صورت تدریجی آزاد می‌شوند",
+                tok_9v: "سکه طلای فیزیکی — قانون ۵ داریک", tok_9: "هر خریداری که ۵ دارایی داریک را جمع کند، سکه فیزیکی طلای ۲۴ عیار برایش ارسال می‌شود",
+                tok_10v: "پاداش خریدار اول", tok_10: "خریدار اول، یک سکه با روکش آبکاری طلا دریافت می‌کند که نام او پشت سکه حک می‌شود",
+                tok_8v: "Phygital", tok_8: "هر دارایی دیجیتال همراه با سکه طلای ۲۴ عیار فیزیکی است",
+                tok_12v: "تخفیف ۲۰٪ خریداران نخست", tok_12: "۵ خریدار نخستی که خریدی بالای $10,000 انجام دهند، ۲۰٪ تخفیف در خرید بعدی خود دریافت می‌کنند.",
+                cond_title: "شرایط و قوانین داریک", cond_intro: "قوانین پاداش، قفل توکن‌ها و امتیازهای دارندگان", cond_1: "تمام دارایی‌های داریک قفل شده (Vesting Lock) هستند و به‌صورت تدریجی آزاد می‌شوند.", cond_2: "با هر خرید از کلکسیون ما، به ازای هر $10,000 ارزش خرید، ۱ داریک پاداش دریافت می‌کنید.", cond_3: "قفل توکن‌ها تا زمان تعیین‌شده در برنامه آزادسازی (Vesting Schedule) است؛ آزادسازی تدریجی انجام می‌شود.", cond_4: "داریک‌ها فقط به صورت جایزه (Reward) یا طبق قوانین خاص اهدا می‌شوند و به فروش عمومی گذاشته نمی‌شوند.", cond_5: "دارندگان توکن داریک، حق رأی و امتیاز تصمیم‌گیری در پروژه دارند (حاکمیت وزنی).", cond_6: "هر دارنده ۵ داریک، سکه فیزیکی طلای ۲۴ عیار به عنوان پاداش دریافت می‌کند.", cond_7: "کل عرضه فقط ۲,۵۵۰ داریک است: ۲,۰۰۰ داریک قفل شده و ۵۵۰ داریک به صورت پاداش به خریداران آثار اهدا می‌شود.", cond_8: "اولین خریدار (هر مقدار که باشد) سکه فیزیکی با روکش آبکاری طلا هدیه می‌گیرد؛ ۵ خریدار نخست با خرید بالای $10,000 علاوه بر ۲۰٪ تخفیف در خرید بعدی، توکن داریک کامل هم دریافت می‌کنند."
             },
             en: {
-                nav_gallery: "Gallery",
-                nav_about: "Why DARIC?",
-                nav_rewards: "Rewards",
-                nav_tokenomics: "Tokenomics",
-                nav_chronicles: "Chronicles",
-                nav_contract: "Contract",
-                nav_buy: "Buy on Element Market",
-                hero_title: "The Eternal Treasury of Achaemenid DARIC",
-                hero_desc: "The first and most authentic multi-media royal Iranian NFT collection. A luxurious fusion of ancient art, 24-karat pure gold, and modern blockchain.",
-                hero_btn_buy: "Buy Directly from Element Market",
-                hero_btn_gallery: "View the Treasury",
-                stat_1_label: "Blockchain Smart Standard",
-                stat_2_label: "Ethereum Layer-2 Network (Verified)",
-                stat_3_label: "Base Treasury Value",
-                stat_4_label: "Registered Royalty",
-                rewards_title: "Physical & Digital Rewards (Phygital)",
-                rewards_desc: "We give real, tangible value to your loyalty. By purchasing DARIC artworks, you become the owner of a physical treasure.",
-                tier1_badge: "Tier 1: First Companions",
-                tier1_title: "Exclusive Collectible Coin",
-                tier1_item1: "Awarded to the <strong>first buyers</strong> of the project's initial artworks.",
-                tier1_item2: "High-quality coin with <strong>gold plating</strong>.",
-                tier1_item3: "<strong>Buyer's name engraved</strong> on the back as an eternal keepsake.",
-                tier2_badge: "Tier 2: DARIC Treasurers",
-                tier2_title: "Pure 24-Karat Gold Coin",
-                tier2_item1: "Exclusive for holders of <strong>5 DARIC tokens or more</strong> (via purchases on Rarible and Element Market).",
-                tier2_item2: "<strong>Real 24-karat gold coin</strong> with full physical and intrinsic value.",
-                tier2_item3: "The honorable phrase <strong>\"DARIC Treasurer\"</strong> engraved on the back.",
-                tokenomics_title: "Tokenomics & Loyalty Rewards",
-                tokenomics_desc: "Valuation based on real Achaemenid wealth. Each DARIC represents 1.83 tons of ancient gold. The base value of each DARIC is set at $1,000.",
-                token1_value: "1 per $10K",
-                token1_label: "Purchase Reward Mechanism",
-                token1_desc: "For every $10,000 spent on artworks, 1 DARIC is rewarded (e.g., a $200 purchase = 0.02 DARIC), calculated with decimal precision.",
-                token2_label: "Smart Time Lock",
-                token2_desc: "Reward tokens are released periodically and on a schedule (e.g., 6 to 12 months) to prevent sudden selling and maintain stable value.",
-                token3_label: "Whale Special Reward",
-                token3_desc: "Major NFT buyers receive 1 additional DARIC as a loyalty reward, which is locked and non-sellable until the project fully blossoms.",
-                royal_title: "👑 Exclusive Benefits for DARIC Holders (Royal Pass)",
-                royal_discount_title: "30% Discount for the First 5 Buyers",
-                royal_discount_desc: "This exclusive discount applies only to the <strong>first 5 purchases</strong> and only for <strong>purchases above $10,000</strong>. Holders of this privilege have the right to buy DARIC tokens from future phases at $700 (instead of $1,000).",
-                royal_discount_badge: "⚠️ Limited: Only 5 seats remaining",
-                royal_gov_title: "Weighted Governance",
-                royal_gov_desc: "Each 1 DARIC = 1 vote out of a total of 2,550 votes. You have voting rights in the project's future decisions proportional to your holdings.",
-                gallery_title: "The 9-Piece Royal Treasury",
-                gallery_desc: "Ancient artworks recreated with the Achaemenid golden and lapis lazuli palette, with blockchain authenticity certification",
-                token0_desc: "The Endless Vault of Darius: Symbol of imperial wealth, golden chests, and eternal coins in the halls of Persepolis.",
-                token1_desc: "The Royal Golden Chariot: A four-horse golden royal chariot, symbolizing speed, authority, and mastery over the Royal Road.",
-                token2_desc: "Lapis Cup and DARIC Waterfall: An ancient lapis lazuli cup from the Susa palace, upon which molten DARIC gold pours.",
-                token3_desc: "Lapis Throne and Golden Lion: A royal throne carved from lapis lazuli, guarded by Achaemenid golden lions.",
-                token4_desc: "Ancient DARIC Archer Coin: The world's first standard coin, depicting the kneeling king-archer.",
-                token5_desc: "Lapis Cylinder and Golden Tablets: The golden Apadana tablets and a lapis stone prism inscribed with Old Persian cuneiform.",
-                token6_desc: "Golden Rhyton of Homa and Golden Wings: A ceremonial Achaemenid royal drinking vessel, symbolizing the winged lion and the bird of fortune.",
-                token7_desc: "Golden Helmet of the Immortals: Symbol of the invincible power of the 10,000 Immortal soldiers, adorned with gold and turquoise.",
-                token8_desc: "Key to the Gate of All Nations: The golden key to the Gate of All Nations at Persepolis, embodying peace, glory, and world dominion.",
-                buy_btn: "Buy Direct (Token #0) ↗",
-                buy_btn1: "Buy Direct (Token #1) ↗",
-                buy_btn2: "Buy Direct (Token #2) ↗",
-                buy_btn3: "Buy Direct (Token #3) ↗",
-                buy_btn4: "Buy Direct (Token #4) ↗",
-                buy_btn5: "Buy Direct (Token #5) ↗",
-                buy_btn6: "Buy Direct (Token #6) ↗",
-                buy_btn7: "Buy Direct (Token #7) ↗",
-                buy_btn8: "Buy Direct (Token #8) ↗",
-                contract_title: "DARIC Smart Contract Address (Polygon)",
-                contract_desc: "Smart contract verified on Polygonscan and managed by the Thirdweb system",
-                contract_copy: "Copy Address",
-                contract_scan: "View on Polygonscan ↗",
-                chronicles_title: "The 10 Chronicles of Darius the Great",
-                chronicles_desc: "The true story of the world's first coin and the glory of the Persian Empire",
-                chr1_title: "Chronicle I: The Dream of a World Coin",
-                chr1_desc: "In 515 BCE, Darius the Great ordered the minting of the DARIC, giving birth to the world's first standard and pure currency.",
-                chr2_title: "Chronicle II: Pure 24-Karat Fineness",
-                chr2_desc: "The DARIC had a purity of 95.8% gold, which for centuries was the most precise metallurgical standard of the ancient world.",
-                chr3_title: "Chronicle III: Symbol of the Royal Archer",
-                chr3_desc: "The image of the Achaemenid king with bow and spear injected defensive authority and imperial solidity into global trade.",
-                chr4_title: "Chronicle IV: The Royal Road and the DARIC",
-                chr4_desc: "Across the 2,700 km Royal Road from Sardis to Susa, the DARIC was the only trusted currency of the caravans.",
-                chr5_title: "Chronicle V: The Achaemenid Economic Revolution",
-                chr5_desc: "With the arrival of the DARIC, barter trade gave way to a modern monetary economy, creating unprecedented prosperity.",
-                chr6_title: "Chronicle VI: The Treasury of Persepolis",
-                chr6_desc: "Millions of DARIC coins were kept in the Apadana treasuries to financially back the greatest empire in history.",
-                chr7_title: "Chronicle VII: The Diplomacy of Golden Archers",
-                chr7_desc: "The Greeks called DARIC coins \"Golden Archers,\" because their power exceeded that of hundreds of thousands of soldiers.",
-                chr8_title: "Chronicle VIII: The Golden Tablets of Apadana",
-                chr8_desc: "The golden tablets of Darius, deposited under the palace foundations, introduced the DARIC as the eternal certificate of this land.",
-                chr9_title: "Chronicle IX: The Digital Collection on Blockchain",
-                chr9_desc: "Today, after 2,500 years, the DARIC treasury has been revived as a luxurious multimedia NFT on the Polygon blockchain."
+                nav_gallery: "Gallery", nav_about: "Why DARIC?", nav_chronicles: "Chronicles", nav_contract: "Contract",
+                hero_badge: "Achaemenid Royal Collection on Polygon", hero_title: "Eternal Treasury of Achaemenid DARIC",
+                hero_desc: "The first & most authentic Persian Imperial multimedia NFT collection. A majestic blend of ancient art, 24K pure gold, and modern Web3.",
+                btn_element: "Buy on Element Market", btn_explore: "Explore Collection",
+                stat_1: "Smart Contract Standard", stat_2: "Ethereum L2 Network (Verified)", stat_3: "Collection Base Floor", stat_4: "Registered Creator Royalty",
+                gallery_title: "The 9 Imperial Relics Showcase", gallery_subtitle: "Ancient masterworks reminted in Achaemenid Gold & Lapis palette with verified Web3 authenticity",
+                contract_title: "DARIC Smart Contract Address (Polygon)", contract_desc: "Verified contract on Polygonscan, fully managed via Thirdweb architecture",
+                copy_btn: "Copy Address", verify_scan: "View on Polygonscan ↗",
+                chronicles_title: "10 Chronicles of Darius the Great", chronicles_subtitle: "The true epic of the world's first global currency and Persian imperial grandeur",
+                token_title: "DARIC Tokenomics", token_sub: "The royal economy of DARIC: valuation, governance and special rewards",
+                tok_1: "Pricing formula: Every $10,000 of value = 1 DARIC",
+                tok_3: "Treasury threshold: $30,000+", tok_4: "Royalty: 7.5%",
+                tok_5: "Weighted governance — voting power proportional to the number of DARICs held | Total supply: 2,550 DARIC",
+                tok_6v: "Vesting Lock", tok_6: "Assets are released gradually",
+                tok_9v: "Physical Gold Coin — 5 DARIC Rule", tok_9: "Collect 5 DARIC assets and a physical 24-karat gold coin is shipped to you",
+                tok_10v: "First-Buyer Prize", tok_10: "The first buyer receives a gold-plated coin with their name engraved on the back",
+                tok_8v: "Phygital", tok_8: "Every digital asset is paired with a physical 24-karat gold coin",
+                tok_12v: "20% First-Buyers Discount", tok_12: "The first 5 buyers who purchase over $10,000 receive a 20% discount on their next purchase.",
+                cond_title: "DARIC Rules & Conditions", cond_intro: "Reward rules, token lock, and holder privileges", cond_1: "All DARIC assets are locked (Vesting Lock) and released gradually.", cond_2: "With every purchase from our collection, you earn 1 DARIC reward per $10,000 of purchase value.", cond_3: "Tokens are locked until the release date defined in the Vesting Schedule; unlocking is gradual.", cond_4: "DARICs are only distributed as rewards or under special rules — never sold publicly.", cond_5: "DARIC token holders have voting and decision-making power in the project (weighted governance).", cond_6: "Anyone holding 5 DARICs receives a physical 24-karat gold coin as a reward.", cond_7: "Total supply is only 2,550 DARIC: 2,000 locked and 550 distributed as rewards to art buyers.", cond_8: "The very first buyer (any amount) receives a gold-plated physical coin; the first 5 buyers over $10,000 also get 20% off their next purchase plus a full DARIC token."
             },
-            peo: {
-                nav_gallery: "𐎯𐎡𐎯𐎠𐎼𐎿",
-                nav_about: "𐎨𐎹 𐎭𐎠𐎼𐎡𐎧?",
-                nav_rewards: "𐎭𐎠𐎴𐎠",
-                nav_tokenomics: "𐎫𐎢𐎣𐎴",
-                nav_chronicles: "𐎧𐎿𐎠𐎹",
-                nav_contract: "𐎶𐎡𐎬𐎠𐎧",
-                nav_buy: "𐎧𐎼𐎡𐎭 Element",
-                hero_title: "𐎥𐎴𐎧𐎡𐎴𐎠 𐎩𐎠𐎫𐎹 𐎭𐎠𐎼𐎡𐎧 𐏃𐎧𐏁𐎠𐎹𐎼𐎫𐎡𐎹",
-                hero_desc: "𐎴𐎧𐎿𐎫𐎡𐎴 𐎿𐎢𐎠𐎿𐎡𐎴 𐎠𐎼𐎫𐎡𐎹 𐏁𐎠𐏃𐎠𐎴𐏁𐎡 𐎡𐎼𐎠𐎴. 𐎠𐎼𐎫 𐎲𐎠𐎿𐎫𐎠𐎴، 𐎫𐎶𐎠 ۲۴ 𐎠𐎼𐎡𐎹 𐎠𐎬 𐎲𐎡𐎡𐎤𐎨𐎡𐎴.",
-                hero_btn_buy: "𐎧𐎼𐎡𐎭 𐎶𐎿𐎫𐎢𐎡𐎶",
-                hero_btn_gallery: "𐎭𐎡𐎭𐎠𐎼 𐎥𐎴𐎧𐎡𐎴𐎠",
-                stat_1_label: "𐎿𐎫𐎠𐎴𐎭𐎠𐎼𐎭 𐏃𐎢𐏁𐎶𐎴𐎭",
-                stat_2_label: "𐎿𐎪𐎲𐎫 𐎡𐎫𐎼𐎡𐎢𐎶",
-                stat_3_label: "𐎠𐎼𐎤 𐎥𐎴𐎧𐎡𐎴𐎠",
-                stat_4_label: "𐏃𐎧 𐎿𐎠𐎹",
-                rewards_title: "𐎭𐎠𐎴𐏃𐎠 𐎱𐎢𐎿𐎫𐎡𐎧𐎡 𐎭𐎡𐎧𐎡𐎫𐎠𐎿",
-                rewards_desc: "𐎶𐎠 𐎲𐎼 𐎢𐎼𐎭𐎡 𐏁𐎶𐎠 𐎠𐎼𐎤 𐎺𐎠𐎤𐎡𐎹 𐎶𐎡𐎭𐏃𐎡𐎶. 𐎲𐎠 𐎧𐎼𐎡𐎭 𐎠𐎬𐎠𐎼 𐎭𐎠𐎼𐎡𐎧، 𐎶𐎠𐎡 𐎥𐎴𐎧𐎡𐎴𐎠 𐎱𐎢𐎿𐎫𐎡𐎧𐎡 𐎶𐎡𐏁𐎺𐎡𐎭.",
-                tier1_badge: "𐎱𐎡𐏁 ۱: 𐏃𐎶𐎼𐎠𐏃 𐎴𐎧𐎿𐎫𐎡𐎴",
-                tier1_title: "𐎿𐎧𐎠 𐎧𐎿𐎢𐎿𐎡",
-                tier1_item1: "𐎠𐏃𐎭𐎠 𐎲𐎠 <strong>𐎴𐎧𐎿𐎫𐎡𐎴 𐎧𐎼𐎡𐎭𐎠𐎼𐎠𐎴</strong>.",
-                tier1_item2: "𐎿𐎧𐎠 𐎲𐎠 <strong>𐎼𐎢𐎧𐎧𐎶𐎠 𐎫𐎶𐎠</strong>.",
-                tier1_item3: "<strong>𐎴𐎠𐎶 𐎧𐎼𐎡𐎭𐎠𐎼</strong> 𐎭𐎼 𐎱𐎢𐏁𐎫 𐎿𐎧𐎠.",
-                tier2_badge: "𐎱𐎡𐏁 ۲: 𐎥𐎴𐎧𐎡𐎴𐎭𐎠𐎼𐎠𐎴 𐎭𐎠𐎼𐎡𐎧",
-                tier2_title: "𐎿𐎧𐎠 𐎫𐎶𐎠 ۲۴ 𐎠𐎼𐎡𐎹",
-                tier2_item1: "𐎺𐎡𐏀𐎠 𐎭𐎠𐎼𐎴𐎭𐎥𐎠𐎴 <strong>۵ 𐎭𐎠𐎼𐎡𐎧 𐎹𐎠 𐎲𐎡𐏁</strong>.",
-                tier2_item2: "<strong>𐎿𐎧𐎠 𐎺𐎠𐎤𐎡𐎹 𐎫𐎶𐎠 ۲۴ 𐎠𐎼𐎡𐎹</strong>.",
-                tier2_item3: "𐏃𐎧𐎠𐎧𐎹 <strong>«𐎥𐎴𐎧𐎡𐎴𐎭𐎠𐎼 𐎭𐎠𐎼𐎡𐎧»</strong> 𐎭𐎼 𐎱𐎢𐏁𐎫 𐎿𐎧𐎠.",
-                tokenomics_title: "𐎫𐎢𐎧𐎴𐎢𐎶𐎡𐎧𐎿 𐎠𐎬 𐎭𐎠𐎴 𐎢𐎼𐎭𐎡",
-                tokenomics_desc: "𐎠𐎼𐎤𐏁𐎭𐎠𐎷𐎡 𐎲𐎼 𐎠𐎿𐎠𐎿 𐎺𐎠𐎤𐎡𐎹 𐏃𐎧𐏁𐎠𐎹𐎼𐎫𐎡. 𐏃𐎼 𐎭𐎠𐎼𐎡𐎧 𐎴𐎶𐎠𐎹𐎭𐎥𐎼 ۱.۸۳ 𐎫𐎴 𐎫𐎶𐎠 𐎲𐎠𐎿𐎫𐎠𐎴 𐎠𐎿𐎫. 𐎠𐎼𐎤 𐏃𐎼 𐎭𐎠𐎼𐎡𐎧 ۱,۰۰۰ 𐎭𐎠𐎡𐎠𐎼 𐎫𐎠𐎡𐎡𐎴 𐏁𐎭𐎠 𐎠𐎿𐎫.",
-                token1_value: "۱ 𐎲𐎠 ۱۰K$",
-                token1_label: "𐎶𐎧𐎠𐎴𐎡𐎿𐎶 𐎭𐎠𐎴 𐎧𐎼𐎡𐎭",
-                token1_desc: "𐎲𐎠 𐏃𐎼 ۱۰,۰۰۰ 𐎭𐎠𐎡𐎠𐎼 𐎧𐎼𐎡𐎭 𐎠𐎬𐎠𐎼، ۱ 𐎭𐎠𐎼𐎡𐎧 𐎭𐎠𐎴 (۲۰۰ 𐎭𐎠𐎡𐎠𐎼 = ۰.۰۲ 𐎭𐎠𐎼𐎡𐎧).",
-                token2_label: "𐎧𐎢𐎭 𐏃𐎢𐏁𐎶𐎴𐎭 𐎫𐎶𐎠𐎴𐎡",
-                token2_desc: "𐎫𐎢𐎧𐎠𐎤𐏃𐎠 𐎭𐎠𐎴 𐎲𐎠 𐎭𐎢𐎼𐎠𐎴𐎡 ۶ 𐎫𐎠 ۱۲ 𐎶𐎠𐏃𐎠 𐎠𐎲𐎠𐎭 𐎶𐎡𐏁𐎺𐎠𐎭.",
-                token3_label: "𐎭𐎠𐎴 𐎺𐎡𐏀𐎠 𐎴𐏃𐎴𐎥𐏃𐎠",
-                token3_desc: "𐎧𐎼𐎡𐎭𐎠𐎼𐎠𐎴 𐎢𐎶𐎭𐎠 NFT ۱ 𐎭𐎠𐎼𐎡𐎧 𐎠𐎾𐎠𐎳𐎡 𐎭𐎠𐎴 𐎶𐎡𐎥𐎡𐎼𐎭.",
-                royal_title: "👑 𐎶𐎰𐎠𐎹𐎠 𐎠𐎴𐎧𐎿𐎠𐎼𐎡 𐎭𐎠𐎼𐎡𐎧 (Royal Pass)",
-                royal_discount_title: "۳۰٪ 𐎫𐎧𐎳𐎡𐎳 𐎺𐎡𐏀𐎠 ۵ 𐎧𐎼𐎡𐎭𐎠𐎼 𐎴𐎧𐎿𐎫𐎡𐎴",
-                royal_discount_desc: "𐎡𐎴 𐎫𐎧𐎳𐎡𐎳 𐎠𐎴𐎧𐎿𐎠𐎼 𐎳𐎴𐎡 𐎲𐎼𐎠𐎡 <strong>۵ 𐎧𐎼𐎡𐎭 𐎠𐎺𐎡𐎴</strong> 𐎠𐎬 𐎳𐎴𐎡 𐎲𐎼𐎠𐎡 <strong>𐎧𐎼𐎡𐎭𐏃𐎠𐎡 𐎲𐎠𐎡𐎠 ۱۰,۰۰۰ 𐎭𐎠𐎡𐎠𐎼</strong> 𐎠𐎹𐎭 𐎶𐎡𐏁𐎺𐎭.",
-                royal_discount_badge: "⚠️ 𐎶𐏃𐎭𐎢𐎭: ۵ 𐎱𐎡𐏁 𐎲𐎠𐎩𐎡",
-                royal_gov_title: "𐏃𐎢𐎧𐎢𐎶𐎫 𐎺𐎰𐎴𐎡",
-                royal_gov_desc: "𐏃𐎼 ۱ 𐎭𐎠𐎼𐎡𐎧 = ۱ 𐎼𐎠𐎹 𐎠𐎿 ۲,۵۵۰ 𐎼𐎠𐎹.",
-                gallery_title: "𐎥𐎴𐎧𐎡𐎴𐎠 ۹ 𐎥𐎴𐏃 𐏁𐎠𐏃𐎠𐎴𐏁𐎡",
-                gallery_desc: "𐎠𐎬𐎠𐎼 𐎲𐎠𐎿𐎫𐎠𐎴𐎡 𐎲𐎠 𐎱𐎠𐎡𐎫 𐎫𐎶𐎠𐎡 𐎠𐎬 𐎠𐎲𐎥 𐏃𐎧𐏁𐎠𐎹𐎼𐎫𐎡",
-                token0_desc: "𐎥𐎴𐎧𐎡𐎴𐎠 𐎲𐎡𐎱𐎠𐎹𐎠𐎴 𐎭𐎠𐎼𐎡𐎢𐏁.",
-                token1_desc: "𐎠𐎼𐎲𐎠 𐎫𐎶𐎠𐎡 𐏁𐎠𐏃𐎠𐎴𐏁𐎡.",
-                token2_desc: "𐎧𐎭 𐎠𐎲𐎥 𐎠𐎬 𐎠𐎲𐏁𐎠𐎼 𐎭𐎠𐎼𐎡𐎧.",
-                token3_desc: "𐎫𐎧𐎫 𐏁𐎠𐏃𐎠𐎴𐏁𐎡 𐎠𐎲𐎥 𐎠𐎬 𐏁𐎡𐎼 𐎫𐎶𐎠𐎡.",
-                token4_desc: "𐎿𐎧𐎠 𐎧𐏃𐎴 𐎧𐎶𐎠𐎴𐎭𐎠𐎼 𐎫𐎶𐎠𐎡 𐎭𐎠𐎼𐎡𐎧.",
-                token5_desc: "𐎠𐎿𐎫𐎺𐎠𐎴𐎠 𐎠𐎲𐎥 𐎠𐎬 𐎠𐎢𐎺𐎠𐏃 𐎫𐎶𐎠𐎡.",
-                token6_desc: "𐎼𐎡𐎫𐎢𐎴 𐎫𐎶𐎠𐎡 𐏃𐎶𐎠 𐎠𐎬 𐎲𐎠𐎡𐏃𐎠𐎹 𐎫𐎶𐎠𐎡.",
-                token7_desc: "𐎧𐎢𐎭𐏃𐎢𐎭 𐎫𐎶𐎠𐎡 𐎿𐎱𐎠𐏃 𐎩𐎠𐎺𐎡𐎭𐎠𐎴.",
-                token8_desc: "𐎧𐎡𐎭 𐎭𐎼𐎺𐎠𐎰𐎠 𐎶𐎡𐎡𐎫 𐎠𐎬 𐎴𐎶𐎠𐎭 𐎧𐎭𐎼𐎫.",
-                buy_btn: "𐎧𐎼𐎡𐎭 (Token #0) ↗",
-                buy_btn1: "𐎧𐎼𐎡𐎭 (Token #1) ↗",
-                buy_btn2: "𐎧𐎼𐎡𐎭 (Token #2) ↗",
-                buy_btn3: "𐎧𐎼𐎡𐎭 (Token #3) ↗",
-                buy_btn4: "𐎧𐎼𐎡𐎭 (Token #4) ↗",
-                buy_btn5: "𐎧𐎼𐎡𐎭 (Token #5) ↗",
-                buy_btn6: "𐎧𐎼𐎡𐎭 (Token #6) ↗",
-                buy_btn7: "𐎧𐎼𐎡𐎭 (Token #7) ↗",
-                buy_btn8: "𐎧𐎼𐎡𐎭 (Token #8) ↗",
-                contract_title: "𐎶𐎡𐎬𐎠𐎧 𐏃𐎢𐏁𐎶𐎴𐎭 𐎭𐎠𐎼𐎡𐎧 (Polygon)",
-                contract_desc: "𐎶𐎡𐎬𐎠𐎧 𐎫𐎠𐎹𐎡𐎭 𐏁𐎭𐎠 𐎭𐎼 Polygonscan",
-                contract_copy: "𐎧𐎢𐎱𐎡",
-                contract_scan: "𐎭𐎡𐎭𐎠𐎼 𐎭𐎼 Polygonscan ↗",
-                chronicles_title: "۱۰ 𐎧𐎿𐎠𐎹 𐎭𐎠𐎼𐎡𐎢𐏁 𐎲𐎰𐎼𐎥",
-                chronicles_desc: "𐎭𐎠𐎿𐎫𐎠𐎴 𐎺𐎠𐎤𐎡𐎹 𐎿𐎧𐎠 𐎩𐏃𐎠𐎴𐎡",
-                chr1_title: "𐎧𐎿𐎠𐎹 ۱: 𐎼𐎢𐎡𐎠 𐎿𐎧𐎠 𐎩𐏃𐎠𐎴𐎡",
-                chr1_desc: "𐎭𐎠𐎼𐎡𐎢𐏁 𐎲𐎰𐎼𐎥 𐎭𐎼 ۵۱۵ 𐎱𐎡𐏁 𐎠𐎿 𐎶𐎡𐎡𐎭 𐎭𐎠𐎼𐎡𐎧 𐎼𐎠 𐎱𐎭𐎠𐎶 𐎧𐎼𐎭.",
-                chr2_title: "𐎧𐎿𐎠𐎹 ۲: 𐎠𐎼𐎡𐎹 ۲۴",
-                chr2_desc: "𐎭𐎠𐎼𐎡𐎧 ۹۵.۸٪ 𐎫𐎶𐎠 𐎭𐎠𐏁𐎫.",
-                chr3_title: "𐎧𐎿𐎠𐎹 ۳: 𐎧𐎶𐎠𐎴𐎭𐎠𐎼 𐏁𐎠𐏃𐎠𐎴𐏁𐎡",
-                chr3_desc: "𐎫𐎿𐎺𐎡𐎼 𐏁𐎠𐏃 𐏃𐎧𐏁𐎠𐎹𐎼𐎫𐎡 𐎲𐎠 𐎧𐎶𐎠𐎴 𐎠𐎬 𐎴𐎡𐎫𐏃𐎠.",
-                chr4_title: "𐎧𐎿𐎠𐎹 ۴: 𐎼𐎠𐏃 𐏁𐎠𐏃𐎠𐎴𐏁𐎡 𐎠𐎬 𐎭𐎠𐎼𐎡𐎧",
-                chr4_desc: "𐎭𐎼 ۲,۷۰۰ 𐎧𐎡𐎡𐎢𐎶𐎫𐎼 𐎼𐎠𐏃 𐏁𐎠𐏃𐎠𐎴𐏁𐎡.",
-                chr5_title: "𐎧𐎿𐎠𐎹 ۵: 𐎠𐎴𐎧𐎡𐎡𐎠𐎲 𐎠𐎧𐎫𐏁𐎠𐎭𐎡",
-                chr5_desc: "𐎲𐎠 𐎺𐎢𐎭 𐎭𐎠𐎼𐎡𐎧، 𐎫𐎩𐎠𐎼𐎫 𐎲𐎠 𐎠𐎧𐎫𐏁𐎠𐎭 𐎱𐎢𐎡 𐎥𐎼𐎳𐎫.",
-                chr6_title: "𐎧𐎿𐎠𐎹 ۶: 𐎥𐎴𐎧𐎡𐎴𐎠 𐎫𐎧𐎫 𐎩𐎶𐏁𐎡𐎭",
-                chr6_desc: "𐎶𐎡𐎡𐎢𐎴𐏃𐎠 𐎿𐎧𐎠 𐎭𐎠𐎼𐎡𐎧 𐎭𐎼 𐎥𐎴𐎧𐎡𐎴𐎠𐏃𐎠 𐎠𐎱𐎠𐎭𐎠𐎴.",
-                chr7_title: "𐎧𐎿𐎠𐎹 ۷: 𐎭𐎡𐎱𐎡𐎶𐎠𐎿𐎡 𐎧𐎶𐎠𐎴𐎭𐎠𐎼𐎠𐎴 𐎫𐎶𐎠𐎡",
-                chr7_desc: "𐎹𐎢𐎴𐎠𐎴𐎡𐎠𐎴 𐎿𐎧𐎠𐏃𐎠 𐎭𐎠𐎼𐎡𐎧 𐎼𐎠 «𐎧𐎶𐎠𐎴𐎭𐎠𐎼𐎠𐎴 𐎫𐎶𐎠𐎡» 𐎶𐎡𐎥𐎳𐎫𐎴𐎭.",
-                chr8_title: "𐎧𐎿𐎠𐎹 ۸: 𐎠𐎢𐎺𐎠𐏃 𐎫𐎶𐎠𐎡 𐎠𐎱𐎠𐎭𐎠𐎴",
-                chr8_desc: "𐎠𐎢𐎺𐎠𐏃 𐎫𐎶𐎠𐎡 𐎭𐎠𐎼𐎡𐎢𐏁 𐎭𐎠𐎼𐎡𐎧 𐎼𐎠 𐎥𐎺𐎠𐏃𐎡 𐎩𐎠𐎺𐎭𐎠𐎴𐎠 𐎶𐎹𐎭𐎭.",
-                chr9_title: "𐎧𐎿𐎠𐎹 ۹: 𐎶𐎧𐎶𐎢𐎠𐎠 𐎭𐎡𐎩𐎡𐎫𐎠𐎿 𐎭𐎼 𐎲𐎡𐎡𐎤𐎨𐎡𐎴",
-                chr9_desc: "𐎠𐎶𐎼𐎢𐎤 𐎱𐎿 𐎠𐎿 ۲,۵۰۰ 𐎿𐎠𐎡، 𐎥𐎴𐎧𐎡𐎴𐎠 𐎭𐎠𐎼𐎡𐎧 𐎲𐎠𐎿𐎫𐎠𐎴 𐏁𐎭."
+            cu: {
+                nav_gallery: "𐎥𐎠𐎰𐎢", nav_about: "𐎭𐎠𐎼𐎡𐎣", nav_chronicles: "𐎴𐎡𐎱𐎡𐏁𐎰𐎠", nav_contract: "𐎧𐏁𐎰𐎼",
+                hero_badge: "𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐎺𐎇𐎼𐎣", hero_title: "𐎭𐎠𐎼𐎡𐎣 𐎠𐎼𐎹𐎠 𐎧𐏁𐎰𐎼",
+                hero_desc: "𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐎺𐎇𐎼𐎣 𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐎧𐏁𐎠𐎹𐎰𐎡𐎹𐎠𐎴𐎠𐎶 𐎧𐏁𐎰𐎼 𐎠𐎼𐎹𐎠.",
+                btn_element: "𐎧𐎢𐎭 Element Market", btn_explore: "𐎥𐎠𐎰𐎢",
+                stat_1: "ERC-721 𐎧𐏁𐎰𐎼", stat_2: "Polygon 𐎠𐎼𐎹𐎠", stat_3: "$30,000+ 𐎭𐎠𐎼𐎡𐎣", stat_4: "7.5% 𐎧𐏁𐎰𐎼",
+                gallery_title: "𐎭𐎠𐎼𐎡𐎣 𐎥𐎠𐎰𐎢", gallery_subtitle: "𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐎺𐎇𐎼𐎣 𐎠𐎼𐎹𐎠",
+                contract_title: "𐎧𐏁𐎰𐎼 Polygon Contract", contract_desc: "Thirdweb & Polygonscan 𐎴𐎡𐎱𐎡𐏁𐎰𐎠",
+                copy_btn: "𐎧𐎢𐎭", verify_scan: "Polygonscan ↗",
+                chronicles_title: "𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎴𐎡𐎱𐎡𐏁𐎰𐎠", chronicles_subtitle: "𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐎺𐎇𐎼𐎣 𐎠𐎼𐎹𐎠",
+                token_title: "𐎭𐎠𐎼𐎡𐎣 𐎧𐏁𐎰𐎼", token_sub: "𐎭𐎠𐎼𐎡𐎣 𐎠𐎼𐎹𐎠",
+                tok_1: "1 DARIC = $10,000", tok_3: "$30,000+", tok_4: "7.5%",
+                tok_5: "2,550 DARIC", tok_6v: "Vesting Lock", tok_6: "𐎠𐎼𐎹𐎠", tok_8v: "Phygital", tok_8: "24K 𐎭𐎠𐎼𐎡𐎣"
             }
         };
 
-        function switchLang(lang) {
-            // Update active button
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'cu' ? 'fa' : lang;
+            document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
+            
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn-' + lang).classList.add('active');
+            event.target.classList.add('active');
 
-            // Set direction
-            const html = document.documentElement;
-            if (lang === 'en') {
-                html.setAttribute('dir', 'ltr');
-                html.setAttribute('lang', 'en');
-            } else {
-                html.setAttribute('dir', 'rtl');
-                html.setAttribute('lang', lang === 'fa' ? 'fa' : 'peo');
-            }
-
-            // Update all texts
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
+            const t = translations[lang];
+            Object.keys(t).forEach(key => {
+                const el = document.querySelector(`[data-i18n="${key}"]`);
+                if (el) el.innerText = t[key];
             });
 
-            // Special styling for Old Persian
-            if (lang === 'peo') {
-                document.body.style.fontFamily = "'Vazirmatn', serif";
-                document.body.style.letterSpacing = '1px';
-            } else {
-                document.body.style.fontFamily = "'Vazirmatn', sans-serif";
-                document.body.style.letterSpacing = 'normal';
-            }
+            renderGallery();
+            renderChronicles();
         }
 
-        // Initialize with Persian
-        switchLang('fa');
+        function copyContract() {
+            navigator.clipboard.writeText("0x929327af760a0bb3d98309634993a66f9f7cdae0");
+            alert(currentLang === 'fa' ? "آدرس قرارداد با موفقیت کپی شد!" : "Contract address copied to clipboard!");
+        }
+
+        function openModal(src) {
+            document.getElementById('modalImg').src = src;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Init
+        renderGallery();
+        renderChronicles();
     </script>
 
-</body>
-</html>
+
+</body></html>
