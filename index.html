@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)https://daric-genesis.github.io/daric/#gallery -->
+<!-- DARIC -->
 <html lang="fa" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DARIC - The Royal Achaemenid NFT Collection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="./css2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold-primary: #D4AF37;
@@ -55,7 +55,7 @@
         .hero-img { width: 100%; max-width: 420px; border-radius: 15px; filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3)); }
         
         /* Stats / Contract Section */
-        .stats-section { padding: 60px 5%; background: rgba(15, 15, 22, 0.6); border-y: 1px solid var(--border-gold); }
+        .stats-section { padding: 60px 5%; background: rgba(15, 15, 22, 0.6); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: center; }
         .stat-card { background: var(--card-bg); border: 1px solid var(--border-gold); padding: 25px; border-radius: 16px; }
         .stat-val { font-size: 28px; font-weight: 900; color: var(--gold-primary); margin-bottom: 5px; }
@@ -90,7 +90,7 @@
 
         /* Contract & Copy Box */
         .contract-box { max-width: 700px; margin: 50px auto 0; background: var(--card-bg); border: 1px solid var(--gold-primary); padding: 25px; border-radius: 20px; text-align: center; }
-        .contract-addr { background: rgba(0,0,0,0.5); border: 1px border var(--border-gold); padding: 12px 20px; border-radius: 10px; font-family: monospace; font-size: 14px; color: var(--gold-light); word-break: break-all; margin: 15px 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .contract-addr { background: rgba(0,0,0,0.5); border: 1px solid var(--border-gold); padding: 12px 20px; border-radius: 10px; font-family: monospace; font-size: 14px; color: var(--gold-light); word-break: break-all; margin: 15px 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
         .copy-btn { background: var(--gold-primary); border: none; padding: 6px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 12px; }
 
         /* Lightbox Modal */
@@ -105,28 +105,53 @@
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; padding-top: 100px; }
             .hero-title { font-size: 32px; }
-            nav { display: none; }
+            nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(10,10,14,.97); padding: 20px; gap: 18px; border-bottom: 1px solid var(--border-gold); }
+            nav.open { display: flex; }
+            .menu-btn { display: block; }
+            header { gap: 10px; }
+            .brand-name { font-size: 17px; }
+            .slide-img { height: 300px !important; }
         }
+    
+        .menu-btn { display: none; background: none; border: 1px solid var(--border-gold); color: var(--gold-primary); font-size: 22px; border-radius: 8px; padding: 2px 10px; cursor: pointer; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        .cuneiform-mode, .cuneiform-mode * { font-family: 'Noto Sans Old Persian', 'Segoe UI Historic', sans-serif; }
+        .carousel-section { padding: 90px 5% 20px; }
+        .carousel { position: relative; max-width: 900px; margin: 0 auto; border: 1px solid var(--gold-primary); border-radius: 20px; overflow: hidden; box-shadow: 0 0 40px rgba(212,175,55,.2); background: #000; }
+        .slide { display: none; position: relative; }
+        .slide.active { display: block; animation: fade .8s; }
+        @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+        .slide-img { width: 100%; height: 520px; object-fit: cover; display: block; cursor: zoom-in; }
+        .slide-cap { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 20px 20px; background: linear-gradient(transparent, rgba(0,0,0,.85)); color: var(--gold-light); font-weight: 700; font-size: 20px; text-align: center; }
+        .c-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(10,10,14,.7); border: 1px solid var(--gold-primary); color: var(--gold-primary); width: 44px; height: 44px; border-radius: 50%; font-size: 22px; cursor: pointer; z-index: 3; }
+        .c-prev { left: 12px; } .c-next { right: 12px; }
+        .c-arrow:hover { background: var(--gold-primary); color: #000; }
+        .dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(212,175,55,.3); border: none; cursor: pointer; padding: 0; }
+        .dot.active { background: var(--gold-primary); transform: scale(1.3); }
+        .modal-content { object-fit: contain; }
+        @media (prefers-reduced-motion: reduce) { .slide.active { animation: none; } html { scroll-behavior: auto; } }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <a href="https://daric-genesis.github.io/daric/#" class="logo-container">
-            <img src="./logo daric.webp" alt="DARIC Logo" class="logo-img">
+        <a href="#" class="logo-container">
+            <img src="logo%20daric.webp" alt="DARIC Logo" class="logo-img">
             <span class="brand-name">DARIC NFT</span>
         </a>
-        <nav>
-            <a href="https://daric-genesis.github.io/daric/#gallery" data-i18n="nav_gallery">گالری آثار</a>
-            <a href="https://daric-genesis.github.io/daric/#about" data-i18n="nav_about">چرا داریک؟</a>
-            <a href="https://daric-genesis.github.io/daric/#chronicles" data-i18n="nav_chronicles">روایت‌ها</a>
-            <a href="https://daric-genesis.github.io/daric/#contract" data-i18n="nav_contract">قرارداد</a>
+        <nav onclick="this.classList.remove('open')">
+            <a href="#gallery" data-i18n="nav_gallery">گالری آثار</a>
+            <a href="#about" data-i18n="nav_about">چرا داریک؟</a>
+            <a href="#chronicles" data-i18n="nav_chronicles">روایت‌ها</a>
+            <a href="#contract" data-i18n="nav_contract">قرارداد</a>
         </nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
         <div class="lang-switcher">
-            <button class="lang-btn active" onclick="setLanguage('fa')">FA</button>
-            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-            <button class="lang-btn cuneiform" onclick="setLanguage('cu')">𐎠𐎼𐎹𐎠</button>
+            <button class="lang-btn active" onclick="setLanguage('fa', this)">FA</button>
+            <button class="lang-btn" onclick="setLanguage('en', this)">EN</button>
+            <button class="lang-btn cuneiform" onclick="setLanguage('cu', this)">𐎠𐎼𐎹𐎠</button>
         </div>
     </header>
 
@@ -138,12 +163,12 @@
             <p class="hero-desc" data-i18n="hero_desc">نخستین و اصیل‌ترین مجموعه NFT چندرسانه‌ای شاهنشاهی ایران. ترکیبی فاخر از هنر باستانی، طلای خالص ۲۴ عیار و بلاک‌چین مدرن.</p>
             <div class="hero-btns">
                 <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank" class="btn-gold" data-i18n="btn_element">خرید مستقیم از Element Market</a>
-                <a href="https://daric-genesis.github.io/daric/#gallery" class="btn-outline" data-i18n="btn_explore">مشاهده گنجینه</a>
+                <a href="#gallery" class="btn-outline" data-i18n="btn_explore">مشاهده گنجینه</a>
             </div>
         </div>
         <div class="hero-visual">
             <div class="hero-img-box">
-                <img src="./DARIC.webp" alt="DARIC King Coin" class="hero-img" onclick="openModal(this.src)">
+                <img src="DARIC.webp" alt="DARIC King Coin" class="hero-img" onclick="openModal(this.src)" style="cursor:zoom-in">
             </div>
             <div class="stat-card daric-rules">
                 <div class="stat-lbl" style="font-weight:700" data-i18n="cond_title">شرایط و قوانین داریک</div>
@@ -161,12 +186,34 @@
         </div>
     </section>
 
+    <!-- Slideshow -->
+    <section class="carousel-section" id="slideshow">
+        <div class="carousel" id="carousel" tabindex="0">
+            <button class="c-arrow c-prev" onclick="moveSlide(-1)" aria-label="Previous">‹</button>
+            <button class="c-arrow c-next" onclick="moveSlide(1)" aria-label="Next">›</button>
+        </div>
+        <div class="dots" id="dots"></div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="gallery_title">گنجینه ۹گانه سلطنتی</h2>
+            <p class="section-subtitle" data-i18n="gallery_subtitle"></p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
     <!-- Stats -->
     <section class="stats-section" id="about">
         <div class="stats-grid">
             
             
             
+            <div class="stat-card"><div class="stat-val" data-i18n="tok_1v">۲,۵۵۰ DARIC</div><div class="stat-lbl" data-i18n="tok_5">حاکمیت وزنی | عرضه کل: 2,550 DARIC</div></div>
+            <div class="stat-card"><div class="stat-val" data-i18n="tok_8v">Phygital</div><div class="stat-lbl" data-i18n="tok_8">هر دارایی دیجیتال همراه با سکه طلای ۲۴ عیار فیزیکی است</div></div>
+            <div class="stat-card"><div class="stat-val" data-i18n="tok_9v">سکه طلای فیزیکی — قانون ۵ داریک</div><div class="stat-lbl" data-i18n="tok_9">هر خریداری که ۵ دارایی داریک را جمع کند، سکه فیزیکی طلای ۲۴ عیار برایش ارسال می‌شود</div></div>
+            <div class="stat-card"><div class="stat-val" data-i18n="tok_10v">پاداش خریدار اول</div><div class="stat-lbl" data-i18n="tok_10">خریدار اول، یک سکه با روکش آبکاری طلا دریافت می‌کند</div></div>
             <div class="stat-card">
                 <div class="stat-val" data-i18n="tok_12v">تخفیف ۲۰٪ خریداران نخست</div>
                 <div class="stat-lbl" data-i18n="tok_12">۵ خریدار نخستی که خریدی بالای $10,000 انجام دهند، ۲۰٪ تخفیف در خرید بعدی خود دریافت می‌کنند.</div>
@@ -225,7 +272,7 @@
                 <div class="chronicle-card">
                     <div class="chronicle-num">روایت هشتم</div>
                     <h3 class="chronicle-title">الواح زرین آپادانا</h3>
-                    <p class="chronicle-text">لوح‌های زرین داریوش که زیر پادseries کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.</p>
+                    <p class="chronicle-text">لوح‌های زرین داریوش که زیر پایه‌های کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.</p>
                 </div>
             
                 <div class="chronicle-card">
@@ -244,11 +291,23 @@
 
     <!-- Modal Lightbox -->
     <div id="modal" class="modal" onclick="closeModal()">
-        <span class="close-modal">×</span>
+        <span class="close-modal" aria-label="Close">×</span>
         <img class="modal-content" id="modalImg">
     </div>
 
     <!-- Footer -->
+    <!-- Contract -->
+    <section class="gallery-section" id="contract">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="contract_title">آدرس قرارداد هوشمند داریک (Polygon)</h2>
+            <p class="section-subtitle" data-i18n="contract_desc"></p>
+        </div>
+        <div class="contract-box">
+            <div class="contract-addr"><span>0x929327af760a0bb3d98309634993a66f9f7cdae0</span><button class="copy-btn" onclick="copyContract()" data-i18n="copy_btn">کپی آدرس</button></div>
+            <a class="nft-buy-btn" style="display:inline-block;padding:10px 24px" target="_blank" rel="noopener" href="https://polygonscan.com/address/0x929327af760a0bb3d98309634993a66f9f7cdae0" data-i18n="verify_scan">مشاهده در Polygonscan ↗</a>
+        </div>
+    </section>
+
     <!-- Markets -->
     <section class="gallery-section" id="markets">
         <div class="section-header">
@@ -298,7 +357,7 @@
             { num: "روایت پنجم", title_fa: "انقلاب اقتصادی هخامنشی", title_en: "Achaemenid Financial Revolution", text_fa: "با ورود داریک، تجارت پایاپای جای خود را به اقتصاد پولی مدرن داد و شکوفایی بی‌نظیری ایجاد نمود.", text_en: "By replacing barter with standardized coinage, Darius catalyzed an unprecedented era of economic prosperity." },
             { num: "روایت ششم", title_fa: "خزانه تخت جمشید", title_en: "The Treasury of Persepolis", text_fa: "میلیون‌ها سکه داریک در خزانه‌های آپادانا نگهداری می‌شد تا پشتیبان مالی بزرگ‌ترین امپراتوری تاریخ باشد.", text_en: "Millions of Daric coins backed the imperial treasury of Persepolis, powering world architecture and art." },
             { num: "روایت هفتم", title_fa: "دیپلماسی کمانداران زرین", title_en: "Golden Archer Diplomacy", text_fa: "یونانیان سکه‌های داریک را «کمانداران زرین» می‌نامیدند، چرا که قدرت آن از صدها هزار سرباز بیشتر بود.", text_en: "Greeks called Darics 'Golden Archers', acknowledging that its economic influence surpassed massive armies." },
-            { num: "روایت هشتم", title_fa: "الواح زرین آپادانا", title_en: "The Golden Tablets of Apadana", text_fa: "لوح‌های زرین داریوش که زیر پادseries کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.", text_en: "Gold foundation tablets of Apadana sealed the eternal legacy of Darius and his golden standard." },
+            { num: "روایت هشتم", title_fa: "الواح زرین آپادانا", title_en: "The Golden Tablets of Apadana", text_fa: "لوح‌های زرین داریوش که زیر پایه‌های کاخ ثبت شدند، داریک را گواهینامه جاودانه این سرزمین معرفی کردند.", text_en: "Gold foundation tablets of Apadana sealed the eternal legacy of Darius and his golden standard." },
             { num: "روایت نهم", title_fa: "مجموعه دیجیتال روی بلاک‌چین", title_en: "Digital Renaissance on Blockchain", text_fa: "امروز پس از ۲۵۰۰ سال، گنجینه داریک به عنوان یک NFT چندرسانه‌ای فاخر روی بلاک‌چین پلی‌گان احیا شده است.", text_en: "2,500 years later, the imperial Daric legacy is resurrected on Polygon blockchain as a luxury NFT collection." },
             { num: "روایت دهم", title_fa: "میراث جاودان برای کلکسیونرها", title_en: "Eternal Legacy for Collectors", text_fa: "مالکیت هر داریک دیجیتال، اتصال مستقیم به شکوه شاهنشاهی پارس و اصالت ثبت شده وب۳ است.", text_en: "Owning a digital Daric connects collectors directly to Persian royal majesty and verified Web3 provenance." }
         ];
@@ -396,22 +455,24 @@
             }
         };
 
-        function setLanguage(lang) {
+        function setLanguage(lang, btn) {
             currentLang = lang;
-            document.documentElement.lang = lang === 'cu' ? 'fa' : lang;
+            document.documentElement.lang = lang === 'cu' ? 'peo' : lang;
+            document.body.classList.toggle('cuneiform-mode', lang === 'cu');
             document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
             
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (btn) btn.classList.add('active');
 
-            const t = translations[lang];
+            const t = Object.assign({}, translations.fa, lang === 'fa' ? {} : translations.en, translations[lang]);
             Object.keys(t).forEach(key => {
-                const el = document.querySelector(`[data-i18n="${key}"]`);
-                if (el) el.innerText = t[key];
+                
+                document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el => el.innerText = t[key]);
             });
 
             renderGallery();
             renderChronicles();
+            renderCarousel();
         }
 
         function copyContract() {
@@ -428,9 +489,57 @@
             document.getElementById('modal').style.display = 'none';
         }
 
+        // Extra translations (EN) for keys that were missing
+        Object.assign(translations.en, {
+            markets_title: "Official DARIC Marketplaces", markets_subtitle: "The royal DARIC collection can be bought and verified on trusted NFT marketplaces",
+            mk_rarible: "Buy and trade DARIC on Rarible", mk_element: "Buy DARIC tokens directly on Element", tok_1v: "2,550 DARIC"
+        });
+        Object.assign(translations.fa, {
+            markets_title: "بازارهای رسمی خرید داریک", markets_subtitle: "مجموعه سلطنتی داریک در بازارهای معتبر NFT قابل خرید و بررسی است",
+            mk_rarible: "خرید و معامله داریک در بازار Rarible", mk_element: "خرید مستقیم توکن‌های داریک در بازار Element", tok_1v: "۲,۵۵۰ داریک"
+        });
+        Object.assign(translations.cu, { tok_1v: "2,550 DARIC", markets_title: "Rarible · Element" });
+
+        // Carousel
+        let slideIdx = 0, slideTimer;
+        function renderCarousel() {
+            const c = document.getElementById('carousel');
+            c.querySelectorAll('.slide').forEach(e => e.remove());
+            const L = currentLang;
+            galleryData.forEach((it, i) => {
+                const d = document.createElement('div');
+                d.className = 'slide' + (i === slideIdx ? ' active' : '');
+                d.innerHTML = `<img class="slide-img" src="${it.file}" alt="" onclick="openModal(this.src)"><div class="slide-cap ${L === 'en' ? 'en-font' : ''}">${it['title_' + L] || it.title_fa}</div>`;
+                c.insertBefore(d, c.firstChild);
+            });
+            c.querySelectorAll('.slide').forEach((e, k, a) => { /* reverse order fix */ });
+            const slides = [...c.querySelectorAll('.slide')].reverse();
+            slides.forEach((e, i) => e.classList.toggle('active', i === slideIdx));
+            c._slides = slides;
+            document.getElementById('dots').innerHTML = galleryData.map((_, i) => `<button class="dot ${i === slideIdx ? 'active' : ''}" aria-label="${i+1}" onclick="goSlide(${i})"></button>`).join('');
+        }
+        function goSlide(n) {
+            const c = document.getElementById('carousel');
+            slideIdx = (n + galleryData.length) % galleryData.length;
+            c._slides.forEach((e, i) => e.classList.toggle('active', i === slideIdx));
+            document.querySelectorAll('.dot').forEach((e, i) => e.classList.toggle('active', i === slideIdx));
+            restartTimer();
+        }
+        function moveSlide(d) { goSlide(slideIdx + d); }
+        function restartTimer() {
+            clearInterval(slideTimer);
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            slideTimer = setInterval(() => goSlide(slideIdx + 1), 4500);
+        }
+        const carEl = document.getElementById('carousel');
+        carEl.addEventListener('mouseenter', () => clearInterval(slideTimer));
+        carEl.addEventListener('mouseleave', restartTimer);
+        carEl.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') moveSlide(-1); if (e.key === 'ArrowRight') moveSlide(1); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
         // Init
-        renderGallery();
-        renderChronicles();
+        setLanguage('fa', document.querySelector('.lang-btn'));
+        restartTimer();
     </script>
 
 
