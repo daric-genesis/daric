@@ -6,7 +6,7 @@
     <title>DARIC - The Royal Achaemenid NFT Collection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="./DARIC - The Royal Achaemenid NFT Collection_files/css2" rel="stylesheet">
+    <link href="./css2" rel="stylesheet">
     <style>
         :root {
             --gold-primary: #D4AF37;
@@ -114,7 +114,7 @@
     <!-- Header -->
     <header>
         <a href="https://daric-genesis.github.io/daric/#" class="logo-container">
-            <img src="./DARIC - The Royal Achaemenid NFT Collection_files/logo daric.webp" alt="DARIC Logo" class="logo-img">
+            <img src="./logo daric.webp" alt="DARIC Logo" class="logo-img">
             <span class="brand-name">DARIC NFT</span>
         </a>
         <nav>
@@ -143,7 +143,20 @@
         </div>
         <div class="hero-visual">
             <div class="hero-img-box">
-                <img src="./DARIC - The Royal Achaemenid NFT Collection_files/DARIC.webp" alt="DARIC King Coin" class="hero-img" onclick="openModal(this.src)">
+                <img src="./DARIC.webp" alt="DARIC King Coin" class="hero-img" onclick="openModal(this.src)">
+            </div>
+            <div class="stat-card daric-rules">
+                <div class="stat-lbl" style="font-weight:700" data-i18n="cond_title">شرایط و قوانین داریک</div>
+                <ul style="list-style:none;padding:0;margin:8px 0 0;line-height:1.9">
+                    <li data-i18n="cond_1">تمام دارایی‌های داریک قفل شده (Vesting Lock) هستند و به‌صورت تدریجی آزاد می‌شوند.</li>
+                    <li data-i18n="cond_2">با هر خرید از کلکسیون ما، به ازای هر $10,000 ارزش خرید، ۱ داریک پاداش دریافت می‌کنید.</li>
+                    <li data-i18n="cond_3">قفل توکن‌ها تا زمان تعیین‌شده در برنامه آزادسازی (Vesting Schedule) است؛ آزادسازی تدریجی انجام می‌شود.</li>
+                    <li data-i18n="cond_4">داریک‌ها فقط به صورت جایزه (Reward) یا طبق قوانین خاص اهدا می‌شوند و به فروش عمومی گذاشته نمی‌شوند.</li>
+                    <li data-i18n="cond_5">دارندگان توکن داریک، حق رأی و امتیاز تصمیم‌گیری در پروژه دارند (حاکمیت وزنی).</li>
+                    <li data-i18n="cond_6">هر دارنده ۵ داریک، سکه فیزیکی طلای ۲۴ عیار به عنوان پاداش دریافت می‌کند.</li>
+                    <li data-i18n="cond_7">کل عرضه فقط ۲,۵۵۰ داریک است: ۲,۰۰۰ داریک قفل شده و ۵۵۰ داریک به صورت پاداش به خریداران آثار اهدا می‌شود.</li>
+                    <li data-i18n="cond_8">اولین خریدار (هر مقدار که باشد) سکه فیزیکی با روکش آبکاری طلا هدیه می‌گیرد؛ ۵ خریدار نخست با خرید بالای $10,000 علاوه بر ۲۰٪ تخفیف در خرید بعدی، توکن داریک کامل هم دریافت می‌کنند.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -151,275 +164,9 @@
     <!-- Stats -->
     <section class="stats-section" id="about">
         <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-val">ERC-721</div>
-                <div class="stat-lbl" data-i18n="stat_1">استاندارد هوشمند بلاک‌چین</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">Polygon</div>
-                <div class="stat-lbl" data-i18n="stat_2">شبکه لایه دو اتریوم (تایید شده)</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">$30,000+</div>
-                <div class="stat-lbl" data-i18n="stat_3">ارزش پایه گنجینه</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">7.5%</div>
-                <div class="stat-lbl" data-i18n="stat_4">حق رویالیتی ثبت شده</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">2,550</div>
-                <div class="stat-lbl" data-i18n="stat_5">تعداد کل داریک — عرضه کامل (Total Supply)</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery-section" id="gallery">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="gallery_title">گنجینه ۹گانه سلطنتی</h2>
-            <p class="section-subtitle" data-i18n="gallery_subtitle">آثار باستانی بازآفرینی شده با پالت طلایی و لاجوردی هخامنشی با گواهینامه اصالت بلاک‌چین</p>
-        </div>
-        <div class="section-header">
-            <h3 class="section-title" data-i18n="cond_title">شرایط و قوانین داریک</h3>
-            <p class="section-subtitle" data-i18n="cond_intro">قوانین پاداش، قفل توکن‌ها و امتیازهای دارندگان</p>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_1">تمام دارایی‌های داریک قفل شده (Vesting Lock) هستند و به‌صورت تدریجی آزاد می‌شوند.</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_2">با هر خرید از کلکسیون ما، به ازای هر $10,000 ارزش خرید، ۱ داریک پاداش دریافت می‌کنید.</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_3">قفل توکن‌ها تا زمان تعیین‌شده در برنامه آزادسازی (Vesting Schedule) است؛ آزادسازی تدریجی انجام می‌شود.</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_4">داریک‌ها فقط به صورت جایزه (Reward) یا طبق قوانین خاص اهدا می‌شوند و به فروش عمومی گذاشته نمی‌شوند.</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_5">دارندگان توکن داریک، حق رأی و امتیاز تصمیم‌گیری در پروژه دارند (حاکمیت وزنی).</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_6">هر دارنده ۵ داریک، سکه فیزیکی طلای ۲۴ عیار به عنوان پاداش دریافت می‌کند.</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_7">کل عرضه فقط ۲,۵۵۰ داریک است: ۲,۰۰۰ داریک قفل شده و ۵۵۰ داریک به صورت پاداش به خریداران آثار اهدا می‌شود.</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-lbl" data-i18n="cond_8">اولین خریدار (هر مقدار که باشد) سکه فیزیکی با روکش آبکاری طلا هدیه می‌گیرد؛ ۵ خریدار نخست با خرید بالای $10,000 علاوه بر ۲۰٪ تخفیف در خرید بعدی، توکن داریک کامل هم دریافت می‌کنند.</div>
-        </div>
-        <div class="gallery-grid" id="galleryGrid">
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('w8jx3ceFfsM7uxV1qnBcCvYcanE-mZWRPx2sQSK6FMe8nY9bjA.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/w8jx3ceFfsM7uxV1qnBcCvYcanE-mZWRPx2sQSK6FMe8nY9bjA.webp" alt="خزانه‌ی بی‌پایان داریوش" class="nft-img">
-                        <span class="token-tag">Token #0</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">خزانه‌ی بی‌پایان داریوش</h3>
-                            <p class="nft-desc">نماد عظمت ثروت امپراتوری، صندوقچه‌های طلا و سکه‌های جاودانه در تالارهای تخت جمشید.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/0" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #0) ↗
-                        </a>
-                    </div>
-                </div>
             
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('02.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/02.webp" alt="ارابه زرین شاهنشاهی" class="nft-img">
-                        <span class="token-tag">Token #1</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">ارابه زرین شاهنشاهی</h3>
-                            <p class="nft-desc">ارابه سلطنتی چهار اسبه طلایی، نماد سرعت، اقتدار و تسلط بر جاده شاهی.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/1" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #1) ↗
-                        </a>
-                    </div>
-                </div>
             
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('03.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/03.webp" alt="قدح لاجوردی و آبشار داریک" class="nft-img">
-                        <span class="token-tag">Token #2</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">قدح لاجوردی و آبشار داریک</h3>
-                            <p class="nft-desc">قدح باستانی لاجورد کاخ شوش که طلای ذوب‌شده داریک بر آن می‌بارد.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/2" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #2) ↗
-                        </a>
-                    </div>
-                </div>
             
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('04.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/04.webp" alt="تخت سلطنتی لاجورد و شیر زرین" class="nft-img">
-                        <span class="token-tag">Token #3</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">تخت سلطنتی لاجورد و شیر زرین</h3>
-                            <p class="nft-desc">تخت شاهنشاهی تراشیده از لاجورد با محافظان شیر طلایی هخامنشی.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/3" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #3) ↗
-                        </a>
-                    </div>
-                </div>
-            
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('1001.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1001.webp" alt="سکه کهن کماندار زرین داریک" class="nft-img">
-                        <span class="token-tag">Token #4</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">سکه کهن کماندار زرین داریک</h3>
-                            <p class="nft-desc">نخستین سکه استاندارد جهان، نقش شاهنشاه کماندار در حالت دو زانو.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/4" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #4) ↗
-                        </a>
-                    </div>
-                </div>
-            
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('1002.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1002.webp" alt="استوانه لاجورد و الواح زرین" class="nft-img">
-                        <span class="token-tag">Token #5</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">استوانه لاجورد و الواح زرین</h3>
-                            <p class="nft-desc">الواح طلایی آپادانا و منشور سنگ لاجورد با حکاکی خط میخی پارسی باستان.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/5" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #5) ↗
-                        </a>
-                    </div>
-                </div>
-            
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('1003.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1003.webp" alt="ریتون زرین هما و بال‌های زرین" class="nft-img">
-                        <span class="token-tag">Token #6</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">ریتون زرین هما و بال‌های زرین</h3>
-                            <p class="nft-desc">جام پذیرایی تشریفاتی شاهان هخامنشی با نماد شیر بال‌دار و پرنده سعادت.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/6" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #6) ↗
-                        </a>
-                    </div>
-                </div>
-            
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('1004.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1004.webp" alt="کلاه‌خود زرین سپاه جاویدان" class="nft-img">
-                        <span class="token-tag">Token #7</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">کلاه‌خود زرین سپاه جاویدان</h3>
-                            <p class="nft-desc">نماد قدرت بی‌شکست ۱۰ هزار سرباز جاویدان، آراسته به طلا و فیروزه.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/7" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #7) ↗
-                        </a>
-                    </div>
-                </div>
-            
-                <div class="nft-card">
-                    <div class="nft-img-wrapper" onclick="openModal('1005.webp')">
-                        <img src="./DARIC - The Royal Achaemenid NFT Collection_files/1005.webp" alt="کلید دروازه ملل و نماد قدرت" class="nft-img">
-                        <span class="token-tag">Token #8</span>
-                    </div>
-                    <div class="nft-info">
-                        <div>
-                            <h3 class="nft-title ">کلید دروازه ملل و نماد قدرت</h3>
-                            <p class="nft-desc">کلید زرین دروازه همه ملل تخت جمشید، مظهر صلح، شکوه و فرمانروایی جهان.</p>
-                        </div>
-                        <a href="https://element.market/assets/polygon/0x929327af760a0bb3d98309634993a66f9f7cdae0/8" target="_blank" class="nft-buy-btn">
-                            خرید مستقیم (Token #8) ↗
-                        </a>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- Contract Info -->
-    <section id="contract">
-        <div class="contract-box">
-            <h3 style="color:var(--gold-primary); font-size:22px; margin-bottom:10px;" data-i18n="contract_title">آدرس قرارداد هوشمند داریک (Polygon)</h3>
-            <p style="color:var(--text-dim); font-size:14px;" data-i18n="contract_desc">قرارداد هوشمند تایید شده در Polygonscan و مدیریت شده توسط سیستم Thirdweb</p>
-            <div class="contract-addr">
-                <span>0x929327af760a0bb3d98309634993a66f9f7cdae0</span>
-                <button class="copy-btn" onclick="copyContract()" data-i18n="copy_btn">کپی آدرس</button>
-            </div>
-            <a href="https://polygonscan.com/address/0x929327af760a0bb3d98309634993a66f9f7cdae0" target="_blank" style="color:var(--gold-light); font-size:13px; text-decoration:underline;" data-i18n="verify_scan">مشاهده در Polygonscan ↗</a>
-        </div>
-    </section>
-
-
-    <!-- Tokenomics -->
-    <section class="gallery-section" id="tokenomics">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="token_title">توکنومیکس داریک</h2>
-            <p class="section-subtitle" data-i18n="token_sub">اقتصاد سلطنتی داریک: ارزش‌گذاری، حاکمیت و پاداش‌های ویژه</p>
-        </div>
-        <div class="stats-grid" style="max-width:900px; margin:0 auto;">
-            <div class="stat-card">
-                <div class="stat-val">1 DARIC</div>
-                <div class="stat-lbl" data-i18n="tok_1">فرمول قیمت‌گذاری: هر $10,000 ارزش = 1 DARIC</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">$1,000</div>
-                <div class="stat-lbl" data-i18n="tok_2">قیمت پایه: $1,000</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">$30,000+</div>
-                <div class="stat-lbl" data-i18n="tok_3">آستانه گنجینه: بیش از $30,000</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">7.5%</div>
-                <div class="stat-lbl" data-i18n="tok_4">رویالیتی: 7.5%</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">2,550 DARIC</div>
-                <div class="stat-lbl" data-i18n="tok_5">حاکمیت وزنی — قدرت رأی هر نگهدارنده متناسب با تعداد داریک‌های اوست | عرضه کل: 2,500 DARIC</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val" data-i18n="tok_6v">قفل زمانی (Vesting Lock)</div>
-                <div class="stat-lbl" data-i18n="tok_6">دارایی‌ها به‌صورت تدریجی آزاد می‌شوند</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val" data-i18n="tok_7v">Royal Pass — پاداش ۳۰٪</div>
-                <div class="stat-lbl" data-i18n="tok_7">پاداش ۳۰٪ برای ۵ خریدار نخست — «Royal Pass»</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val" data-i18n="tok_8v">Phygital</div>
-                <div class="stat-lbl" data-i18n="tok_8">هر دارایی دیجیتال همراه با سکه طلای ۲۴ عیار فیزیکی است</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val" data-i18n="tok_9v">سکه طلای فیزیکی — قانون ۵ داریک</div>
-                <div class="stat-lbl" data-i18n="tok_9">هر خریداری که ۵ دارایی داریک را جمع کند، سکه فیزیکی طلای ۲۴ عیار برایش ارسال می‌شود</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val" data-i18n="tok_10v">پاداش خریدار اول</div>
-                <div class="stat-lbl" data-i18n="tok_10">خریدار اول، یک سکه با روکش آبکاری طلا دریافت می‌کند که نام او پشت سکه حک می‌شود</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val" data-i18n="tok_11v">قانون تخفیف ۳۰٪</div>
-                <div class="stat-lbl" data-i18n="tok_11">با هر خرید اول، ۳۰٪ تخفیف برای پروژه بعدی داریک دریافت می‌کنید (Royal Pass)</div>
-            </div>
             <div class="stat-card">
                 <div class="stat-val" data-i18n="tok_12v">تخفیف ۲۰٪ خریداران نخست</div>
                 <div class="stat-lbl" data-i18n="tok_12">۵ خریدار نخستی که خریدی بالای $10,000 انجام دهند، ۲۰٪ تخفیف در خرید بعدی خود دریافت می‌کنند.</div>
@@ -602,14 +349,12 @@
                 copy_btn: "کپی آدرس", verify_scan: "مشاهده در Polygonscan ↗",
                 chronicles_title: "روایت‌های ۱۰‌گانه داریوش بزرگ", chronicles_subtitle: "سرگذشت واقعی ضرب اولین سکه جهانی و شکوه امپراتوری ایران",
                 token_title: "توکنومیکس داریک", token_sub: "اقتصاد سلطنتی داریک: ارزش‌گذاری، حاکمیت و پاداش‌های ویژه",
-                tok_1: "فرمول قیمت‌گذاری: هر $10,000 ارزش = 1 DARIC", tok_2: "قیمت پایه: $1,000",
+                tok_1: "فرمول قیمت‌گذاری: هر $10,000 ارزش = 1 DARIC",
                 tok_3: "آستانه گنجینه: بیش از $30,000", tok_4: "رویالیتی: 7.5%",
                 tok_5: "حاکمیت وزنی — قدرت رأی هر نگهدارنده متناسب با تعداد داریک‌های اوست | عرضه کل: 2,550 DARIC",
                 tok_6v: "قفل زمانی (Vesting Lock)", tok_6: "دارایی‌ها به‌صورت تدریجی آزاد می‌شوند",
-                tok_7v: "Royal Pass — تخفیف ۳۰٪ پروژه بعدی", tok_7: "با هر خرید اول، ۳۰٪ تخفیف برای پروژه بعدی داریک دریافت می‌کنید (Royal Pass)",
                 tok_9v: "سکه طلای فیزیکی — قانون ۵ داریک", tok_9: "هر خریداری که ۵ دارایی داریک را جمع کند، سکه فیزیکی طلای ۲۴ عیار برایش ارسال می‌شود",
                 tok_10v: "پاداش خریدار اول", tok_10: "خریدار اول، یک سکه با روکش آبکاری طلا دریافت می‌کند که نام او پشت سکه حک می‌شود",
-                tok_11v: "قانون تخفیف ۳۰٪", tok_11: "با هر خرید اول، ۳۰٪ تخفیف برای پروژه بعدی داریک دریافت می‌کنید (Royal Pass)",
                 tok_8v: "Phygital", tok_8: "هر دارایی دیجیتال همراه با سکه طلای ۲۴ عیار فیزیکی است",
                 tok_12v: "تخفیف ۲۰٪ خریداران نخست", tok_12: "۵ خریدار نخستی که خریدی بالای $10,000 انجام دهند، ۲۰٪ تخفیف در خرید بعدی خود دریافت می‌کنند.",
                 cond_title: "شرایط و قوانین داریک", cond_intro: "قوانین پاداش، قفل توکن‌ها و امتیازهای دارندگان", cond_1: "تمام دارایی‌های داریک قفل شده (Vesting Lock) هستند و به‌صورت تدریجی آزاد می‌شوند.", cond_2: "با هر خرید از کلکسیون ما، به ازای هر $10,000 ارزش خرید، ۱ داریک پاداش دریافت می‌کنید.", cond_3: "قفل توکن‌ها تا زمان تعیین‌شده در برنامه آزادسازی (Vesting Schedule) است؛ آزادسازی تدریجی انجام می‌شود.", cond_4: "داریک‌ها فقط به صورت جایزه (Reward) یا طبق قوانین خاص اهدا می‌شوند و به فروش عمومی گذاشته نمی‌شوند.", cond_5: "دارندگان توکن داریک، حق رأی و امتیاز تصمیم‌گیری در پروژه دارند (حاکمیت وزنی).", cond_6: "هر دارنده ۵ داریک، سکه فیزیکی طلای ۲۴ عیار به عنوان پاداش دریافت می‌کند.", cond_7: "کل عرضه فقط ۲,۵۵۰ داریک است: ۲,۰۰۰ داریک قفل شده و ۵۵۰ داریک به صورت پاداش به خریداران آثار اهدا می‌شود.", cond_8: "اولین خریدار (هر مقدار که باشد) سکه فیزیکی با روکش آبکاری طلا هدیه می‌گیرد؛ ۵ خریدار نخست با خرید بالای $10,000 علاوه بر ۲۰٪ تخفیف در خرید بعدی، توکن داریک کامل هم دریافت می‌کنند."
@@ -625,14 +370,12 @@
                 copy_btn: "Copy Address", verify_scan: "View on Polygonscan ↗",
                 chronicles_title: "10 Chronicles of Darius the Great", chronicles_subtitle: "The true epic of the world's first global currency and Persian imperial grandeur",
                 token_title: "DARIC Tokenomics", token_sub: "The royal economy of DARIC: valuation, governance and special rewards",
-                tok_1: "Pricing formula: Every $10,000 of value = 1 DARIC", tok_2: "Base price: $1,000",
+                tok_1: "Pricing formula: Every $10,000 of value = 1 DARIC",
                 tok_3: "Treasury threshold: $30,000+", tok_4: "Royalty: 7.5%",
                 tok_5: "Weighted governance — voting power proportional to the number of DARICs held | Total supply: 2,550 DARIC",
                 tok_6v: "Vesting Lock", tok_6: "Assets are released gradually",
-                tok_7v: "Royal Pass — 30% Off Next Project", tok_7: "With your first purchase you receive a 30% discount on DARIC's next project (Royal Pass)",
                 tok_9v: "Physical Gold Coin — 5 DARIC Rule", tok_9: "Collect 5 DARIC assets and a physical 24-karat gold coin is shipped to you",
                 tok_10v: "First-Buyer Prize", tok_10: "The first buyer receives a gold-plated coin with their name engraved on the back",
-                tok_11v: "30% Discount Rule", tok_11: "With your first purchase you receive a 30% discount on DARIC's next project (Royal Pass)",
                 tok_8v: "Phygital", tok_8: "Every digital asset is paired with a physical 24-karat gold coin",
                 tok_12v: "20% First-Buyers Discount", tok_12: "The first 5 buyers who purchase over $10,000 receive a 20% discount on their next purchase.",
                 cond_title: "DARIC Rules & Conditions", cond_intro: "Reward rules, token lock, and holder privileges", cond_1: "All DARIC assets are locked (Vesting Lock) and released gradually.", cond_2: "With every purchase from our collection, you earn 1 DARIC reward per $10,000 of purchase value.", cond_3: "Tokens are locked until the release date defined in the Vesting Schedule; unlocking is gradual.", cond_4: "DARICs are only distributed as rewards or under special rules — never sold publicly.", cond_5: "DARIC token holders have voting and decision-making power in the project (weighted governance).", cond_6: "Anyone holding 5 DARICs receives a physical 24-karat gold coin as a reward.", cond_7: "Total supply is only 2,550 DARIC: 2,000 locked and 550 distributed as rewards to art buyers.", cond_8: "The very first buyer (any amount) receives a gold-plated physical coin; the first 5 buyers over $10,000 also get 20% off their next purchase plus a full DARIC token."
@@ -648,9 +391,8 @@
                 copy_btn: "𐎧𐎢𐎭", verify_scan: "Polygonscan ↗",
                 chronicles_title: "𐎭𐎠𐎼𐎹𐎺𐎢𐏁 𐎴𐎡𐎱𐎡𐏁𐎰𐎠", chronicles_subtitle: "𐎧𐏁𐎠𐎹𐎰𐎡𐎹 𐎺𐎇𐎼𐎣 𐎠𐎼𐎹𐎠",
                 token_title: "𐎭𐎠𐎼𐎡𐎣 𐎧𐏁𐎰𐎼", token_sub: "𐎭𐎠𐎼𐎡𐎣 𐎠𐎼𐎹𐎠",
-                tok_1: "1 DARIC = $10,000", tok_2: "$1,000", tok_3: "$30,000+", tok_4: "7.5%",
-                tok_5: "2,550 DARIC", tok_6v: "Vesting Lock", tok_6: "𐎠𐎼𐎹𐎠",
-                tok_7v: "Royal Pass", tok_7: "30% — 5", tok_8v: "Phygital", tok_8: "24K 𐎭𐎠𐎼𐎡𐎣"
+                tok_1: "1 DARIC = $10,000", tok_3: "$30,000+", tok_4: "7.5%",
+                tok_5: "2,550 DARIC", tok_6v: "Vesting Lock", tok_6: "𐎠𐎼𐎹𐎠", tok_8v: "Phygital", tok_8: "24K 𐎭𐎠𐎼𐎡𐎣"
             }
         };
 
